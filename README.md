@@ -2,7 +2,7 @@
 
 This package is currently in beta
 
-![Preview](preview.png)
+![Preview](https://github.com/necessarylion/bilions_ui/raw/master/preview.png)
 
 
 ### Functions
