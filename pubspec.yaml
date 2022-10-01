@@ -12,6 +12,12 @@ dependencies:
     sdk: flutter
 
   logger: ^1.1.0
+  image_picker: ^0.8.5+3
+  flutter_svg: 1.0.3
+  photo_view: ^0.14.0
+  intl: ^0.17.0
+  path: ^1.8.2
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:

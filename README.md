@@ -38,6 +38,21 @@ confirm(ConfirmDialog(
 )
 ```
 
+##### Image Picker
+
+```
+openUploader(context, (FileInfo file) {
+  console.log(file.path);
+});
+```
+- add below lines in `ios->Runner->info.plist`
+```
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Allow Image access to upload your profile image</string>
+<key>NSCameraUsageDescription</key>
+<string>Allow Image access to upload your profile image</string>
+```
+
 ##### Image Preview
 
 ```
