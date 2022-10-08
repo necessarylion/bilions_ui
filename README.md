@@ -13,24 +13,25 @@ This package is currently in beta
 alert(
   'Title here',
   'Description here',
-  type: 'warning', 
+  variant: 'warning', 
 )
 
 ```
-- type `success, waring, danger, info`
+- variant `success, waring, danger, info`
 
 ##### Toast
 
 ```
-toast('Confirmed', type: 'success');
+toast('Confirmed', variant: 'success');
 
 ```
-- type `success, waring, danger, info`
+- variant `success, waring, danger, info`
 
 ##### Confirm Dialog
 ```
 confirm(ConfirmDialog(
     'Are you sure?', 
+    variant : 'success',
     confirmed: () {
       // do something here
     },
@@ -41,9 +42,12 @@ confirm(ConfirmDialog(
 ##### Image Picker
 
 ```
-openUploader(context, (FileInfo file) {
-  console.log(file.path);
-});
+openUploader(context, 
+  variant: 'primary',
+  onPicked: (FileInfo file) {
+    console.log(file.path);
+  },
+);
 ```
 - add below lines in `ios->Runner->info.plist`
 ```
@@ -85,6 +89,35 @@ menu(
 
 ### Component Widgets
 
+##### DatePicker Input 
+
+```
+BilionsDatePicker(label: 'Date of Birth', onChanged: (date) => {}),
+```
+
+##### DateRangePicker Input
+
+```
+ BilionsDateRangePicker(
+    label: 'Date of Birth',
+    onChanged: (start, end) => {
+
+    },
+),
+```
+
+##### TextInput
+
+```
+BilionsTextInput(label: 'Full Name', onChanged: (text) => {})
+```
+
+##### Password Input
+
+```
+TODO
+```
+
 ##### Avatar Image 
 
 ```
@@ -109,6 +142,7 @@ ImageSlider([
 ```
 PrimaryButton(
   'Button Title',
+  variant : 'success',
   onPressed: () {
     // do something
   },
@@ -119,6 +153,7 @@ PrimaryButton(
 ```
 SecondaryButton(
   'Button Title',
+  variant : 'success',
   onPressed: () {
     // do something
   },
@@ -136,10 +171,34 @@ CardWidget(
   body: Column(
     children: const [
       Span(
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "Lorem Ipsum is simply dummy text of the printing and variantsetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of variant and scrambled it to make a variant specimen book. It has survived not only five centuries, but also the leap into electronic variantsetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       )
     ],
   ),
   footer: const Text('This is footer'),
 )
+```
+
+## Date formatter
+
+- TODO Documentation
+
+## Access Theme Colors
+
+```
+- BilionsColor.primary
+- BilionsColor.primaryLight
+
+- BilionsColor.warning
+- BilionsColor.warningLight
+
+- BilionsColor.danger
+- BilionsColor.dangerLight
+
+- BilionsColor.info
+- BilionsColor.infoLight
+
+- BilionsColor.success
+- BilionsColor.successLight
+...
 ```
