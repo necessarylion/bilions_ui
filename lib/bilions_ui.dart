@@ -28,6 +28,7 @@ part 'inputs/text_input.dart';
 part 'menu/index.dart';
 part 'menu/menu_list.dart';
 part 'modals/alert/alert_modal.dart';
+part 'modals/alert/bilions_alert.dart';
 part 'modals/alert/index.dart';
 part 'modals/confirm/confirm_dialog.dart';
 part 'modals/confirm/index.dart';

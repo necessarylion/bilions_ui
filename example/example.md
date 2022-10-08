@@ -157,6 +157,16 @@ SecondaryButton(
 )
 ```
 
+##### Alert Widget
+
+```
+BilionsAlert(
+  'Wake Up',
+  'You need to code flutter',
+  icon: Icon(Icons.alarm),
+)
+```
+
 ##### Card 
 ```
 CardWidget(

@@ -20,7 +20,7 @@ class BilionsUI {
   Color get success => colorConfig?.success ?? HexColor('#198754');
   Color get successLight => colorConfig?.successLight ?? HexColor('#d4edda');
   Color get warning => colorConfig?.warning ?? HexColor('#FFC107');
-  Color get warningLight => colorConfig?.warningLight ?? HexColor('#17a2b8');
+  Color get warningLight => colorConfig?.warningLight ?? HexColor('##fff3cd');
 
   setColors(ColorConfig config) {
     colorConfig = config;
