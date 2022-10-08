@@ -1,22 +1,49 @@
 import 'package:bilions_ui/bilions_ui.dart';
+import 'package:flutter/material.dart';
 
 class BilionsColors {
   static get background => HexColor('#F3F7FE');
   static get black => HexColor('#000000');
-  static get danger => HexColor('#DC3545');
-  static get dangerLight => HexColor('#F8D7DA');
+  static get danger => BilionsUI().danger;
+  static get dangerLight => BilionsUI().dangerLight;
   static get dark => HexColor('#121824');
   static get fullDark => HexColor('#0F131D');
   static get grey => HexColor('#76849D');
-  static get info => HexColor('#0c5460');
-  static get infoLight => HexColor('#d1ecf1');
+  static get info => BilionsUI().info;
+  static get infoLight => BilionsUI().infoLight;
   static get lightGrey => HexColor('F4F4F4');
-  static get primary => HexColor('#3E519D');
-  static get primaryLight => HexColor('#F3F7FE');
+  static get primary => BilionsUI().primary;
+  static get primaryLight => BilionsUI().primaryLight;
   static get secondary => HexColor('#76849D');
-  static get success => HexColor('#198754');
-  static get successLight => HexColor('#d4edda');
-  static get warning => HexColor('#FFC107');
-  static get warningLight => HexColor('#17a2b8');
+  static get success => BilionsUI().success;
+  static get successLight => BilionsUI().successLight;
+  static get warning => BilionsUI().warning;
+  static get warningLight => BilionsUI().warningLight;
   static get white => HexColor('#FFFFFF');
+}
+
+class ColorConfig {
+  Color? danger;
+  Color? dangerLight;
+  Color? info;
+  Color? infoLight;
+  Color? primary;
+  Color? primaryLight;
+  Color? success;
+  Color? successLight;
+  Color? warning;
+  Color? warningLight;
+
+  ColorConfig({
+    this.danger,
+    this.dangerLight,
+    this.info,
+    this.infoLight,
+    this.primary,
+    this.primaryLight,
+    this.success,
+    this.successLight,
+    this.warning,
+    this.warningLight,
+  });
 }

@@ -41,4 +41,5 @@ part 'utils/image.dart';
 part 'utils/logger.dart';
 part 'utils/moment.dart';
 part 'utils/theme.dart';
+part 'utils/ui.dart';
 part 'utils/variants.dart';

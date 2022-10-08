@@ -213,3 +213,25 @@ CardWidget(
 - Variant.success
 ...
 ```
+
+### Color configuration
+- Want to set your own colors?
+- You can set your own colors in main() function
+
+```
+void main() {
+
+  BilionsUI bilionsUI = BilionsUI();
+  bilionsUI.setColors(
+    ColorConfig(
+      danger: Colors.red,
+      primary: Colors.blue,
+      success: Colors.green,
+      warning: Colors.yellow,
+      info: Colors.purple,
+    ),
+  );
+
+  runApp(const MyApp());
+}
+```
