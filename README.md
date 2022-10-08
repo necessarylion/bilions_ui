@@ -10,7 +10,7 @@
 alert(
   'Title here',
   'Description here',
-  variant: 'warning', 
+  variant: Variant.warning, 
 )
 
 ```
@@ -19,7 +19,7 @@ alert(
 ##### Toast
 
 ```
-toast('Confirmed', variant: 'success');
+toast('Confirmed', variant: Variant.success);
 
 ```
 - variant `success, waring, danger, info`
@@ -28,7 +28,7 @@ toast('Confirmed', variant: 'success');
 ```
 confirm(ConfirmDialog(
     'Are you sure?', 
-    variant : 'success',
+    variant : Variant.success,
     confirmed: () {
       // do something here
     },
@@ -139,7 +139,7 @@ ImageSlider([
 ```
 PrimaryButton(
   'Button Title',
-  variant : 'success',
+  variant : Variant.success,
   onPressed: () {
     // do something
   },
@@ -150,10 +150,20 @@ PrimaryButton(
 ```
 SecondaryButton(
   'Button Title',
-  variant : 'success',
+  variant : Variant.success,
   onPressed: () {
     // do something
   },
+)
+```
+
+##### Alert Widget
+
+```
+BilionsAlert(
+  'Wake Up',
+  'You need to code flutter',
+  icon: Icon(Icons.alarm),
 )
 ```
 
@@ -176,11 +186,14 @@ CardWidget(
 )
 ```
 
-## Date formatter
+### Date formatter
 
-- TODO Documentation
+- get current date time `now()` will return Current `DateTime` instance
+- format date to string `moment.dateToString(now())` will return formatted string date
+- format date to string `moment(now()).format(format: 'dd MMM yyyy')` will return formatted string date
+- format date to string `moment('2022-11-22').parse()` will return `DateTime` instance
 
-## Access Theme Colors
+### Access Theme Colors
 
 ```
 - BilionsColor.primary
@@ -198,4 +211,37 @@ CardWidget(
 - BilionsColor.success
 - BilionsColor.successLight
 ...
+```
+
+### Variants
+
+```
+- Variant.primary
+- Variant.warning
+- Variant.danger
+- Variant.info
+- Variant.success
+...
+```
+
+### Color configuration
+- Want to set your own colors?
+- You can set your own colors in main() function
+
+```
+void main() {
+
+  BilionsUI bilionsUI = BilionsUI();
+  bilionsUI.setColors(
+    ColorConfig(
+      danger: Colors.red,
+      primary: Colors.blue,
+      success: Colors.green,
+      warning: Colors.yellow,
+      info: Colors.purple,
+    ),
+  );
+
+  runApp(const MyApp());
+}
 ```
