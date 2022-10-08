@@ -3,12 +3,12 @@ part of bilions_ui;
 class AlertModal extends StatelessWidget {
   final String title;
   final String message;
-  final String? type;
+  final String? variant;
   const AlertModal(
     this.title,
     this.message, {
     Key? key,
-    this.type = 'success',
+    this.variant = 'success',
   }) : super(key: key);
 
   @override
@@ -26,7 +26,8 @@ class AlertModal extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10, bottom: 3),
             decoration: BoxDecoration(
               border: Border(
-                left: BorderSide(width: 3, color: AppTheme.getColor(type)),
+                left:
+                    BorderSide(width: 3, color: BilionsTheme.getColor(variant)),
               ),
             ),
             child: Column(
@@ -34,7 +35,7 @@ class AlertModal extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    AppTheme.getIcon(type),
+                    BilionsTheme.getIcon(variant),
                     mr(0.5),
                     Expanded(
                       child: Text(
@@ -52,7 +53,7 @@ class AlertModal extends StatelessWidget {
                   message,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 10,
-                  color: AppColors.grey,
+                  color: BilionsColors.grey,
                 ),
               ],
             ),
@@ -67,7 +68,7 @@ class AlertModal extends StatelessWidget {
             },
             child: Icon(
               Icons.close,
-              color: AppColors.grey,
+              color: BilionsColors.grey,
               size: 20,
             ),
           ),

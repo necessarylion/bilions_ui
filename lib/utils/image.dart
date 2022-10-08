@@ -4,7 +4,7 @@ preview(BuildContext context, List images, {int? index}) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
-    backgroundColor: AppColors.dark,
+    backgroundColor: BilionsColors.dark,
     builder: (context) {
       return FractionallySizedBox(
         heightFactor: 1,

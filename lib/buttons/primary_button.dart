@@ -4,40 +4,42 @@ class PrimaryButton extends StatelessWidget {
   final double? width;
   final bool disable;
   final String title;
-  final Color? color;
   final Function()? onPressed;
+  final String variant;
+  final double radius;
   const PrimaryButton(
     this.title, {
     Key? key,
     this.width,
     this.disable = false,
     this.onPressed,
-    this.color,
+    this.variant = 'primary',
+    this.radius = 10,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(radius),
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: !disable
               ? [
-                  color ?? AppColors.primary,
-                  color ?? AppColors.primary,
+                  BilionsTheme.getColor(variant),
+                  BilionsTheme.getColor(variant),
                 ]
               : [
-                  AppColors.grey,
-                  AppColors.grey,
+                  BilionsColors.grey,
+                  BilionsColors.grey,
                 ],
         ),
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(radius),
           onTap: onPressed != null && !disable ? onPressed : null,
           child: SizedBox(
             width: width ?? double.infinity,

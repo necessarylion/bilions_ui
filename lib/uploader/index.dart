@@ -1,13 +1,17 @@
 part of bilions_ui;
 
-openUploader(BuildContext context, Function(FileInfo) onPicked) {
+openUploader(
+  BuildContext context, {
+  required Function(FileInfo) onPicked,
+  String variant = 'primary',
+}) {
   menu(
     context,
     MenuList([
       MenuListItem(
         Icon(
           Icons.photo_library_rounded,
-          color: AppColors.primary,
+          color: BilionsTheme.getColor(variant),
         ),
         title: 'Gallery',
         subTitle: 'Select image from your photo gallery',
@@ -19,7 +23,7 @@ openUploader(BuildContext context, Function(FileInfo) onPicked) {
       MenuListItem(
         Icon(
           Icons.camera,
-          color: AppColors.primary,
+          color: BilionsTheme.getColor(variant),
         ),
         title: 'Camera',
         subTitle: 'Open camera to take photo',

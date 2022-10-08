@@ -6,7 +6,7 @@ alert(BuildContext context, String title, String message, {String? type}) {
     AlertModal(
       title,
       message,
-      type: type,
+      variant: type,
     ),
   );
 }

@@ -16,7 +16,7 @@ openCalendar(
       return Theme(
         data: ThemeData().copyWith(
           colorScheme: ThemeData().colorScheme.copyWith(
-                primary: AppColors.primary,
+                primary: BilionsColors.primary,
               ),
         ),
         child: child!,
@@ -51,7 +51,7 @@ openRangePicker(
       return Theme(
         data: ThemeData().copyWith(
           colorScheme: ThemeData().colorScheme.copyWith(
-                primary: AppColors.primary,
+                primary: BilionsColors.primary,
               ),
         ),
         child: child!,

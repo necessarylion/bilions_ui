@@ -1,43 +1,83 @@
 part of bilions_ui;
 
-class TextInput extends StatelessWidget {
+class BilionsTextInput extends StatefulWidget {
   final String label;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final String? initialValue;
-  const TextInput({
+  final Function(String)? onChanged;
+  final String? variant;
+  const BilionsTextInput({
     Key? key,
     required this.label,
     this.prefixIcon,
     this.suffixIcon,
     this.controller,
     this.initialValue,
+    this.onChanged,
+    this.variant = 'primary',
   }) : super(key: key);
+
+  @override
+  State<BilionsTextInput> createState() => _BilionsTextInputState();
+}
+
+class _BilionsTextInputState extends State<BilionsTextInput> {
+  TextEditingController? _controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      controller: _controller,
       autocorrect: false,
       enableSuggestions: false,
-      initialValue: initialValue,
+      initialValue: widget.initialValue,
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.primary),
+          borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: AppColors.primary,
+            color: BilionsTheme.getColor(widget.variant),
           ),
         ),
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
+        prefixIcon: widget.prefixIcon,
+        suffixIcon: widget.suffixIcon,
         filled: true,
-        fillColor: AppColors.primaryLight,
-        labelText: label,
-        labelStyle: TextStyle(color: AppColors.primary),
+        fillColor: BilionsTheme.getLightColor(widget.variant),
+        labelText: widget.label,
+        labelStyle: TextStyle(
+          color: BilionsTheme.getColor(widget.variant),
+        ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    if (_controller != null) {
+      _controller?.dispose();
+    }
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.controller != null) {
+      setState(() {
+        _controller = widget.controller;
+      });
+    } else {
+      setState(() {
+        _controller = TextEditingController();
+      });
+    }
+    _controller?.addListener(() {
+      if (widget.onChanged != null) {
+        widget.onChanged!(_controller?.text ?? '');
+      }
+    });
   }
 }

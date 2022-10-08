@@ -2,7 +2,7 @@ part of bilions_ui;
 
 class ConfirmDialog extends StatelessWidget {
   final String title;
-  final String? type;
+  final String? variant;
   final String? message;
   final String? confirmText;
   final String? cancelText;
@@ -20,7 +20,7 @@ class ConfirmDialog extends StatelessWidget {
     this.cancelText,
     this.confirmColor,
     this.cancelColor,
-    this.type = 'primary',
+    this.variant = 'primary',
   }) : super(key: key);
 
   @override
@@ -42,7 +42,7 @@ class ConfirmDialog extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    AppTheme.getIcon(type),
+                    BilionsTheme.getIcon(variant),
                     mr(0.5),
                     Expanded(
                       child: Text(
@@ -61,7 +61,7 @@ class ConfirmDialog extends StatelessWidget {
                     message ?? '',
                     overflow: TextOverflow.ellipsis,
                     maxLines: 10,
-                    color: AppColors.grey,
+                    color: BilionsColors.grey,
                   ),
               ],
             ),
@@ -81,7 +81,7 @@ class ConfirmDialog extends StatelessWidget {
                   child: Text(
                     (cancelText ?? 'Cancel').toUpperCase(),
                     style: TextStyle(
-                      color: cancelColor ?? AppColors.grey,
+                      color: cancelColor ?? BilionsColors.grey,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
@@ -101,7 +101,7 @@ class ConfirmDialog extends StatelessWidget {
                   child: Text(
                     (confirmText ?? 'Confirm').toUpperCase(),
                     style: TextStyle(
-                      color: confirmColor ?? AppTheme.getColor(type),
+                      color: confirmColor ?? BilionsTheme.getColor(variant),
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,

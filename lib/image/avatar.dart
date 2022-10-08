@@ -30,7 +30,7 @@ class Avatar extends StatelessWidget {
               H(title),
               Span(
                 subTitle,
-                color: AppColors.grey,
+                color: BilionsColors.grey,
               ),
             ],
           ))

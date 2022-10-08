@@ -16,7 +16,7 @@ class ImagePreviewModal extends StatelessWidget {
         PhotoViewGallery.builder(
           pageController: PageController(initialPage: index ?? 0),
           backgroundDecoration: BoxDecoration(
-            color: AppColors.dark,
+            color: BilionsColors.dark,
           ),
           itemCount: images.length,
           builder: (context, index) {
@@ -32,7 +32,7 @@ class ImagePreviewModal extends StatelessWidget {
           child: IconPressButton(
             Icon(
               Icons.close,
-              color: AppColors.white,
+              color: BilionsColors.white,
             ),
             onPressed: () {
               Navigator.pop(context);

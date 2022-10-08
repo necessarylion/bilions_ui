@@ -19,7 +19,7 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: AppColors.white,
+      color: BilionsColors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

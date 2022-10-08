@@ -1,10 +1,10 @@
 part of bilions_ui;
 
-class DateInput extends StatefulWidget {
+class BilionsDatePicker extends StatefulWidget {
   final String label;
   final Widget? suffixIcon;
   final Function(String) onChanged;
-  const DateInput({
+  const BilionsDatePicker({
     Key? key,
     required this.label,
     required this.onChanged,
@@ -12,10 +12,10 @@ class DateInput extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<DateInput> createState() => _DateInputState();
+  State<BilionsDatePicker> createState() => _BilionsDatePickerState();
 }
 
-class _DateInputState extends State<DateInput> {
+class _BilionsDatePickerState extends State<BilionsDatePicker> {
   final TextEditingController txt = TextEditingController();
 
   String? date;
@@ -44,22 +44,22 @@ class _DateInputState extends State<DateInput> {
       enableSuggestions: false,
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.primary),
+          borderSide: BorderSide(color: BilionsColors.primary),
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: AppColors.primary,
+            color: BilionsColors.primary,
           ),
         ),
         prefixIcon: Icon(
           Icons.calendar_month,
-          color: AppColors.primary,
+          color: BilionsColors.primary,
         ),
         suffixIcon: widget.suffixIcon,
         filled: true,
-        fillColor: AppColors.primaryLight,
+        fillColor: BilionsColors.primaryLight,
         labelText: widget.label,
-        labelStyle: TextStyle(color: AppColors.primary),
+        labelStyle: TextStyle(color: BilionsColors.primary),
       ),
     );
   }

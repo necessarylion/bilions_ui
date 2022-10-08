@@ -3,14 +3,16 @@ part of bilions_ui;
 class SecondaryButton extends StatelessWidget {
   final double? width;
   final String title;
-  final Color? color;
   final Function()? onPressed;
+  final String variant;
+  final double radius;
   const SecondaryButton(
     this.title, {
     Key? key,
     this.width,
     this.onPressed,
-    this.color,
+    this.variant = 'primary',
+    this.radius = 10,
   }) : super(key: key);
 
   @override
@@ -18,7 +20,7 @@ class SecondaryButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: color ?? AppColors.primary, width: 1),
+        border: Border.all(color: BilionsTheme.getColor(variant), width: 1),
         gradient: const LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
@@ -44,7 +46,7 @@ class SecondaryButton extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    color: color ?? AppColors.primary,
+                    color: BilionsTheme.getColor(variant),
                     fontWeight: FontWeight.bold,
                   ),
                 ),

@@ -3,7 +3,7 @@ part of bilions_ui;
 menu(BuildContext context, Widget widget) {
   showModalBottomSheet(
     context: context,
-    backgroundColor: AppColors.white,
+    backgroundColor: BilionsColors.white,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(20),
@@ -18,7 +18,7 @@ menu(BuildContext context, Widget widget) {
           height: 4,
           width: 50,
           decoration: BoxDecoration(
-            color: AppColors.primary,
+            color: BilionsColors.primary,
             borderRadius: const BorderRadius.all(Radius.circular(3)),
           ),
         ),

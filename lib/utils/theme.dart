@@ -1,41 +1,60 @@
 part of bilions_ui;
 
-class AppTheme {
-  static Color getColor(String? type) {
-    if (type == 'success') {
-      return AppColors.success;
+class BilionsTheme {
+  static Color getColor(String? variant) {
+    if (variant == 'success') {
+      return BilionsColors.success;
     }
-    if (type == 'danger') {
-      return AppColors.danger;
+    if (variant == 'danger') {
+      return BilionsColors.danger;
     }
-    if (type == 'warning') {
-      return AppColors.warning;
+    if (variant == 'warning') {
+      return BilionsColors.warning;
     }
-    return AppColors.primary;
+    if (variant == 'info') {
+      return BilionsColors.info;
+    }
+    return BilionsColors.primary;
   }
 
-  static Widget getIcon(String? type) {
-    if (type == 'success') {
+  static Widget getIcon(String? variant) {
+    if (variant == 'success') {
       return Icon(
         Icons.check_circle,
-        color: getColor(type),
+        color: getColor(variant),
       );
     }
-    if (type == 'danger') {
+    if (variant == 'danger') {
       return Icon(
         Icons.error_rounded,
-        color: getColor(type),
+        color: getColor(variant),
       );
     }
-    if (type == 'warning') {
+    if (variant == 'warning') {
       return Icon(
         Icons.info,
-        color: getColor(type),
+        color: getColor(variant),
       );
     }
     return Icon(
       Icons.info_sharp,
-      color: getColor(type),
+      color: getColor(variant),
     );
+  }
+
+  static Color getLightColor(String? variant) {
+    if (variant == 'success') {
+      return BilionsColors.successLight;
+    }
+    if (variant == 'danger') {
+      return BilionsColors.dangerLight;
+    }
+    if (variant == 'warning') {
+      return BilionsColors.warningLight;
+    }
+    if (variant == 'info') {
+      return BilionsColors.infoLight;
+    }
+    return BilionsColors.primaryLight;
   }
 }

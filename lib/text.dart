@@ -45,7 +45,7 @@ class H extends StatelessWidget {
           data ?? '',
           style: style ??
               TextStyle(
-                color: color ?? AppColors.black,
+                color: color ?? BilionsColors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: size,
                 height: 1.5,
@@ -113,7 +113,7 @@ class P extends StatelessWidget {
             data ?? '',
             style: style ??
                 TextStyle(
-                  color: color ?? AppColors.black,
+                  color: color ?? BilionsColors.black,
                   fontSize: size,
                   height: 1.5,
                 ),
@@ -177,7 +177,7 @@ class Span extends StatelessWidget {
       data ?? '',
       style: style ??
           TextStyle(
-            color: color ?? AppColors.black,
+            color: color ?? BilionsColors.black,
             fontSize: size,
             height: 1.5,
           ),

@@ -26,7 +26,7 @@ class MenuList extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: AppColors.primaryLight,
+                    color: BilionsColors.primaryLight,
                     borderRadius: const BorderRadius.all(Radius.circular(300)),
                   ),
                   child: list.icon,
@@ -40,14 +40,14 @@ class MenuList extends StatelessWidget {
                       if (list.subTitle != null)
                         Span(
                           list.subTitle,
-                          color: AppColors.grey,
+                          color: BilionsColors.grey,
                           size: 13,
                         )
                     ],
                   ),
                 ),
                 list.subFixIcon ??
-                    Icon(Icons.chevron_right, color: AppColors.primary)
+                    Icon(Icons.chevron_right, color: BilionsColors.primary)
               ],
             ),
           ),

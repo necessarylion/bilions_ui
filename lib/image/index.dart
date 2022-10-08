@@ -25,7 +25,7 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: borderColor ?? AppColors.white,
+        color: borderColor ?? BilionsColors.white,
         borderRadius: BorderRadius.all(Radius.circular(radius)),
       ),
       padding: EdgeInsets.all(borderWidth),

@@ -1,6 +1,6 @@
 part of bilions_ui;
 
-void toast(BuildContext context, title, {String type = 'success'}) {
+void toast(BuildContext context, title, {String variant = 'success'}) {
   final scaffold = ScaffoldMessenger.of(context);
   scaffold.showSnackBar(
     SnackBar(
@@ -9,7 +9,7 @@ void toast(BuildContext context, title, {String type = 'success'}) {
       dismissDirection: DismissDirection.up,
       elevation: 0,
       content: Row(children: [
-        AppTheme.getIcon(type),
+        BilionsTheme.getIcon(variant),
         mr(1),
         Text(title),
       ]),
@@ -26,7 +26,7 @@ void toast(BuildContext context, title, {String type = 'success'}) {
       ),
       action: SnackBarAction(
         label: 'Dismiss',
-        textColor: AppTheme.getColor(type),
+        textColor: BilionsTheme.getColor(variant),
         onPressed: scaffold.hideCurrentSnackBar,
       ),
     ),
