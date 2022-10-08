@@ -1,9 +1,6 @@
 ### Bilions UI Components
 
-This package is currently in beta
-
 ![Preview](https://github.com/necessarylion/bilions_ui/raw/master/preview.png)
-
 
 ### Functions
 
