@@ -2,7 +2,7 @@ import 'package:bilions_ui/bilions_ui.dart';
 import 'package:flutter/material.dart';
 
 class BilionsColors {
-  static get background => HexColor('#F3F7FE');
+  static get background => HexColor('#f4f4f4');
   static get black => HexColor('#000000');
   static get danger => BilionsUI().danger;
   static get dangerLight => BilionsUI().dangerLight;

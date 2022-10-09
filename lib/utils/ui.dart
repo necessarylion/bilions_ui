@@ -16,7 +16,7 @@ class BilionsUI {
   Color get info => colorConfig?.info ?? HexColor('#0c5460');
   Color get infoLight => colorConfig?.infoLight ?? HexColor('#d1ecf1');
   Color get primary => colorConfig?.primary ?? HexColor('#3E519D');
-  Color get primaryLight => colorConfig?.primaryLight ?? HexColor('#F3F7FE');
+  Color get primaryLight => colorConfig?.primaryLight ?? HexColor('#EBF2FE');
   Color get success => colorConfig?.success ?? HexColor('#198754');
   Color get successLight => colorConfig?.successLight ?? HexColor('#d4edda');
   Color get warning => colorConfig?.warning ?? HexColor('#FFC107');

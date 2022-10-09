@@ -30,6 +30,7 @@ class BilionsAlert extends StatelessWidget {
               width: 1,
               color: BilionsColors.lightGrey,
             ),
+            color: Colors.white,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

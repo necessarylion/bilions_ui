@@ -33,6 +33,7 @@ part 'modals/alert/index.dart';
 part 'modals/confirm/confirm_dialog.dart';
 part 'modals/confirm/index.dart';
 part 'modals/index.dart';
+part 'table/bilions_table.dart';
 part 'text.dart';
 part 'toast/index.dart';
 part 'uploader/index.dart';

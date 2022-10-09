@@ -186,6 +186,26 @@ CardWidget(
 )
 ```
 
+#### Table
+
+```
+BilionsTable(
+    variant: Variant.success,
+    widths: const [50, 30],
+    header: const [
+      TextLeft('Name', color: Colors.green, bold: true),
+      TextCenter('Rank', color: Colors.green, bold: true),
+      TextRight('Price', color: Colors.green, bold: true),
+    ],
+    body: const [
+      [TextLeft('Ajay Pillai'), TextCenter('1'), TextRight('1000')],
+      [TextLeft('Kumar Sharno'), TextCenter('2'), TextRight('1000')],
+      [TextLeft('Anju Skk'), TextCenter('3'), TextRight('1000')],
+      [TextLeft('Zin Kyaw Kyaw'), TextCenter('4'), TextRight('1000')],
+    ],
+  ),
+```
+
 ### Date formatter
 
 - get current date time `now()` will return Current `DateTime` instance

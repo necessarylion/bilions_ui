@@ -194,3 +194,192 @@ class Span extends StatelessWidget {
     );
   }
 }
+
+class TextCenter extends StatelessWidget {
+  final String? data;
+  final Color? color;
+  final double? size;
+  final TextStyle? style;
+  final StrutStyle? strutStyle;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final bool bold;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final TextWidthBasis? textWidthBasis;
+  final TextHeightBehavior? textHeightBehavior;
+
+  const TextCenter(
+    this.data, {
+    Key? key,
+    this.style,
+    this.color,
+    this.size,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.bold = false,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      data ?? '',
+      style: style ??
+          TextStyle(
+            color: color ?? BilionsColors.black,
+            fontSize: size,
+            fontWeight: bold ? FontWeight.bold : FontWeight.normal,
+            height: 1.5,
+          ),
+      strutStyle: strutStyle,
+      textAlign: textAlign ?? TextAlign.center,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      textScaleFactor: textScaleFactor,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior: textHeightBehavior,
+    );
+  }
+}
+
+class TextLeft extends StatelessWidget {
+  final String? data;
+  final Color? color;
+  final double? size;
+  final TextStyle? style;
+  final StrutStyle? strutStyle;
+  final bool bold;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final TextWidthBasis? textWidthBasis;
+  final TextHeightBehavior? textHeightBehavior;
+
+  const TextLeft(
+    this.data, {
+    Key? key,
+    this.style,
+    this.color,
+    this.bold = false,
+    this.size,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      data ?? '',
+      style: style ??
+          TextStyle(
+            color: color ?? BilionsColors.black,
+            fontSize: size,
+            fontWeight: bold ? FontWeight.bold : FontWeight.normal,
+            height: 1.5,
+          ),
+      strutStyle: strutStyle,
+      textAlign: textAlign ?? TextAlign.left,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      textScaleFactor: textScaleFactor,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior: textHeightBehavior,
+    );
+  }
+}
+
+class TextRight extends StatelessWidget {
+  final String? data;
+  final Color? color;
+  final double? size;
+  final TextStyle? style;
+  final bool bold;
+  final StrutStyle? strutStyle;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final TextWidthBasis? textWidthBasis;
+  final TextHeightBehavior? textHeightBehavior;
+
+  const TextRight(
+    this.data, {
+    Key? key,
+    this.style,
+    this.color,
+    this.size,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.bold = false,
+    this.softWrap,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      data ?? '',
+      style: style ??
+          TextStyle(
+            color: color ?? BilionsColors.black,
+            fontSize: size,
+            fontWeight: bold ? FontWeight.bold : FontWeight.normal,
+            height: 1.5,
+          ),
+      strutStyle: strutStyle,
+      textAlign: textAlign ?? TextAlign.right,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      textScaleFactor: textScaleFactor,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
+      textHeightBehavior: textHeightBehavior,
+    );
+  }
+}
