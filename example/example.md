@@ -1,12 +1,12 @@
-### Bilions UI Components
+# Bilions Flutter UI
 
 ![Preview](https://github.com/necessarylion/bilions_ui/raw/master/preview.png)
 
-### Functions
+# Functions
 
-##### Alert
+## Alert
 
-```
+```dart
 alert(
   'Title here',
   'Description here',
@@ -14,18 +14,16 @@ alert(
 )
 
 ```
-- variant `success, waring, danger, info`
 
-##### Toast
+## Toast
 
-```
+```dart
 toast('Confirmed', variant: Variant.success);
 
 ```
-- variant `success, waring, danger, info`
 
-##### Confirm Dialog
-```
+## Confirm Dialog
+```dart
 confirm(ConfirmDialog(
     'Are you sure?', 
     variant : Variant.success,
@@ -36,9 +34,9 @@ confirm(ConfirmDialog(
 )
 ```
 
-##### Image Picker
+## Image Picker
 
-```
+```dart
 openUploader(context, 
   variant: 'primary',
   onPicked: (FileInfo file) {
@@ -46,17 +44,19 @@ openUploader(context,
   },
 );
 ```
-- add below lines in `ios->Runner->info.plist`
-```
+
+Add below lines in `ios/Runner/info.plist`
+
+```dart
 <key>NSPhotoLibraryUsageDescription</key>
 <string>Allow Image access to upload your profile image</string>
 <key>NSCameraUsageDescription</key>
 <string>Allow Image access to upload your profile image</string>
 ```
 
-##### Image Preview
+## Image Preview
 
-```
+```dart
 preview([
   'https://picsum.photos/id/237/536/354',
   'https://picsum.photos/id/238/536/354',
@@ -65,9 +65,9 @@ preview([
 
 ```
 
-##### Menu 
+## Menu 
 
-```
+```dart
 menu(
   MenuList([
     MenuListItem(
@@ -84,17 +84,17 @@ menu(
 )
 ```
 
-### Component Widgets
+# Components
 
-##### DatePicker Input 
+## DatePicker Input 
 
 ```
 BilionsDatePicker(label: 'Date of Birth', onChanged: (date) => {}),
 ```
 
-##### DateRangePicker Input
+## DateRangePicker Input
 
-```
+```dart
  BilionsDateRangePicker(
     label: 'Date of Birth',
     onChanged: (start, end) => {
@@ -103,21 +103,25 @@ BilionsDatePicker(label: 'Date of Birth', onChanged: (date) => {}),
 ),
 ```
 
-##### TextInput
+## TextInput
 
-```
+```dart
 BilionsTextInput(label: 'Full Name', onChanged: (text) => {})
 ```
 
-##### Password Input
+## Password Input
 
-```
-TODO
+```dart
+BilionsPasswordInput(
+  label: 'Password',
+  onChanged: (value) => {},
+  variant: Variant.danger,
+)
 ```
 
-##### Avatar Image 
+## Avatar Image 
 
-```
+```dart
 Avatar(
   'https://i.pravatar.cc/150?img=3',
   title: 'Zin Kyaw Kyaw',
@@ -125,18 +129,22 @@ Avatar(
 )
 ```
 
-##### Image Slider 
+## Image Slider 
 
-```
+```dart
 ImageSlider([
   'https://picsum.photos/id/237/536/354',
   'https://picsum.photos/id/238/536/354',
   'https://picsum.photos/id/239/536/354',
 ])
 ```
-##### Primary Button
+## Buttons
 
-```
+<!-- tabs:start -->
+
+#### **Primary Button**
+
+```dart
 PrimaryButton(
   'Button Title',
   variant : Variant.success,
@@ -145,9 +153,11 @@ PrimaryButton(
   },
 )
 ```
-##### Secondary Button
 
-```
+#### **Secondary Button**
+
+
+```dart
 SecondaryButton(
   'Button Title',
   variant : Variant.success,
@@ -157,9 +167,12 @@ SecondaryButton(
 )
 ```
 
-##### Alert Widget
+<!-- tabs:end -->
 
-```
+
+## Alert Widget
+
+```dart
 BilionsAlert(
   'Wake Up',
   'You need to code flutter',
@@ -167,8 +180,9 @@ BilionsAlert(
 )
 ```
 
-##### Card 
-```
+## Card 
+
+```dart
 CardWidget(
   header: const Avatar(
     'https://i.pravatar.cc/150?img=3',
@@ -186,9 +200,9 @@ CardWidget(
 )
 ```
 
-#### Table
+## Table
 
-```
+```dart
 BilionsTable(
     variant: Variant.success,
     widths: const [50, 30],
@@ -206,49 +220,45 @@ BilionsTable(
   ),
 ```
 
-### Date formatter
+# Utils
+
+## Date formatter
 
 - get current date time `now()` will return Current `DateTime` instance
 - format date to string `moment.dateToString(now())` will return formatted string date
 - format date to string `moment(now()).format(format: 'dd MMM yyyy')` will return formatted string date
 - format date to string `moment('2022-11-22').parse()` will return `DateTime` instance
 
-### Access Theme Colors
+## Theme Colors
 
-```
-- BilionsColor.primary
-- BilionsColor.primaryLight
-
-- BilionsColor.warning
-- BilionsColor.warningLight
-
-- BilionsColor.danger
-- BilionsColor.dangerLight
-
-- BilionsColor.info
-- BilionsColor.infoLight
-
-- BilionsColor.success
-- BilionsColor.successLight
-...
+```dart
+BilionsColor.primary
+BilionsColor.primaryLight
+BilionsColor.warning
+BilionsColor.warningLight
+BilionsColor.danger
+BilionsColor.dangerLight
+BilionsColor.info
+BilionsColor.infoLight
+BilionsColor.success
+BilionsColor.successLight
 ```
 
-### Variants
+## Variants
 
-```
-- Variant.primary
-- Variant.warning
-- Variant.danger
-- Variant.info
-- Variant.success
-...
+```dart
+Variant.primary
+Variant.warning
+Variant.danger
+Variant.info
+Variant.success
 ```
 
-### Color configuration
+## Theme Color configuration
 - Want to set your own colors?
 - You can set your own colors in main() function
 
-```
+```dart
 void main() {
 
   BilionsUI bilionsUI = BilionsUI();
