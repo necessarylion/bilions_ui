@@ -10,6 +10,7 @@
 
 ```dart
 alert(
+  context,
   'Title here',
   'Description here',
   variant: Variant.warning, 
@@ -20,15 +21,18 @@ alert(
 ## Toast
 
 ```dart
-toast('Confirmed', variant: Variant.success);
+toast(context, 'Confirmed', variant: Variant.success);
 
 ```
 
 ## Confirm Dialog
 ```dart
-confirm(ConfirmDialog(
+confirm(
+  context,
+  ConfirmDialog(
     'Are you sure?', 
-    variant : Variant.success,
+    message: 'Are you sure to delete?'
+    variant : Variant.warning,
     confirmed: () {
       // do something here
     },
@@ -39,7 +43,8 @@ confirm(ConfirmDialog(
 ## Image Picker
 
 ```dart
-openUploader(context, 
+openUploader(
+  context, 
   variant: 'primary',
   onPicked: (FileInfo file) {
     console.log(file.path);
@@ -71,6 +76,7 @@ preview([
 
 ```dart
 menu(
+  context,
   MenuList([
     MenuListItem(
       Icon(
