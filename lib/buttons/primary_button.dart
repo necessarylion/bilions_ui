@@ -7,12 +7,18 @@ class PrimaryButton extends StatelessWidget {
   final Function()? onPressed;
   final String variant;
   final double radius;
+  final Color? color;
+  final Widget? icon;
+  final List<Widget>? children;
   const PrimaryButton(
     this.title, {
     Key? key,
     this.width,
     this.disable = false,
     this.onPressed,
+    this.color,
+    this.children,
+    this.icon,
     this.variant = 'primary',
     this.radius = 10,
   }) : super(key: key);
@@ -27,8 +33,8 @@ class PrimaryButton extends StatelessWidget {
           end: Alignment.centerRight,
           colors: !disable
               ? [
-                  BilionsTheme.getColor(variant),
-                  BilionsTheme.getColor(variant),
+                  color ?? BilionsTheme.getColor(variant),
+                  color ?? BilionsTheme.getColor(variant),
                 ]
               : [
                   BilionsColors.grey,
@@ -48,15 +54,21 @@ class PrimaryButton extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+              children: children ??
+                  [
+                    if (icon != null)
+                      SizedBox(
+                        child: icon,
+                      ),
+                    if (icon != null) mr(1),
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
             ),
           ),
         ),

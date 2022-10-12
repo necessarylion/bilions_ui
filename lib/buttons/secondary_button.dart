@@ -6,11 +6,17 @@ class SecondaryButton extends StatelessWidget {
   final Function()? onPressed;
   final String variant;
   final double radius;
+  final Color? color;
+  final Widget? icon;
+  final List<Widget>? children;
   const SecondaryButton(
     this.title, {
     Key? key,
     this.width,
     this.onPressed,
+    this.color,
+    this.icon,
+    this.children,
     this.variant = 'primary',
     this.radius = 10,
   }) : super(key: key);
@@ -20,7 +26,8 @@ class SecondaryButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: BilionsTheme.getColor(variant), width: 1),
+        border: Border.all(
+            color: color ?? BilionsTheme.getColor(variant), width: 1),
         gradient: const LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
@@ -42,15 +49,21 @@ class SecondaryButton extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: BilionsTheme.getColor(variant),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+              children: children ??
+                  [
+                    if (icon != null)
+                      SizedBox(
+                        child: icon,
+                      ),
+                    if (icon != null) mr(1),
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: color ?? BilionsTheme.getColor(variant),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
             ),
           ),
         ),

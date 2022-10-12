@@ -1,6 +1,6 @@
 name: bilions_ui
 description: Bilions UI components. Custom made alert, confirm, image preview, toast widgets, text input, date picker, bottom sheet menu. All widget are support with different theme variant such as primary, success, danger, info, warning.
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/necessarylion/bilions_ui
 
 environment:
