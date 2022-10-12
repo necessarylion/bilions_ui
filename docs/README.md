@@ -1,49 +1,66 @@
 # Bilions Flutter UI
 
-![Preview](https://github.com/necessarylion/bilions_ui/raw/master/preview.png)
-
 # Functions
 
 ## Alert
-
+<!-- tabs:start -->
+#### **Alert Code**
 ```dart
 alert(
+  context,
   'Title here',
   'Description here',
   variant: Variant.warning, 
 )
-
 ```
+#### **Alert Demo**
+<img src="assets/alert.png" width="300" />
+<!-- tabs:end -->
+
 
 ## Toast
-
+<!-- tabs:start -->
+#### **Toast Code**
 ```dart
-toast('Confirmed', variant: Variant.success);
+toast(context, 'Confirmed', variant: Variant.success);
 
 ```
+#### **Toast Demo**
+<img src="assets/toast.png" width="300" />
+<!-- tabs:end -->
 
 ## Confirm Dialog
+<!-- tabs:start -->
+#### **Dialog Code**
 ```dart
-confirm(ConfirmDialog(
-    'Are you sure?', 
-    variant : Variant.success,
-    confirmed: () {
-      // do something here
-    },
-  ),
+ConfirmDialog(
+  'Are you sure?',
+  message: 'Are you sure to delete?',
+  variant: Variant.warning,
+  confirmed: () {
+    // do something here
+  },
 )
 ```
+#### **Dialog Demo**
+<img src="assets/dialog.png" width="300" />
+<!-- tabs:end -->
 
 ## Image Picker
-
+<!-- tabs:start -->
+#### **Image Picker Code**
 ```dart
-openUploader(context, 
+openUploader(
+  context, 
   variant: 'primary',
   onPicked: (FileInfo file) {
     console.log(file.path);
   },
 );
 ```
+#### **Image Picker Demo**
+<img src="assets/image_picker.png" width="200" />
+<!-- tabs:end -->
 
 Add below lines in `ios/Runner/info.plist`
 
@@ -55,23 +72,28 @@ Add below lines in `ios/Runner/info.plist`
 ```
 
 ## Image Preview
-
+<!-- tabs:start -->
+#### **Image Preview Code**
 ```dart
-preview([
+preview(context, [
   'https://picsum.photos/id/237/536/354',
   'https://picsum.photos/id/238/536/354',
   'https://picsum.photos/id/239/536/354',
 ])
-
 ```
+#### **Image Preview Demo**
+<img src="assets/image_preview.gif" width="200" />
+<!-- tabs:end -->
 
 ## Menu 
-
+<!-- tabs:start -->
+#### **Menu Code**
 ```dart
 menu(
+  context,
   MenuList([
     MenuListItem(
-      Icon(
+      const Icon(
         Icons.edit,
         size: 20,
       ),
@@ -80,20 +102,47 @@ menu(
         // do something
       },
     ),
-  ])
-)
+    MenuListItem(
+      Icon(
+        Icons.copy,
+        color: BilionsColors.success,
+        size: 20,
+      ),
+      title: 'Clone',
+      onPressed: () {
+        // do something
+      },
+    ),
+    MenuListItem(
+      Icon(
+        Icons.delete,
+        color: BilionsColors.danger,
+        size: 20,
+      ),
+      title: 'Delete',
+      onPressed: () {
+        // do something
+      },
+    ),
+  ]),
+);
 ```
+#### **Menu Demo**
+<img src="assets/menu.png" width="200" />
+<!-- tabs:end -->
 
 # Components
 
-## DatePicker Input 
-
+## Date Picker Input 
+<!-- tabs:start -->
+#### **Date Picker Code**
+```dart
+BilionsDatePicker(
+  label: 'Date of Birth', 
+  onChanged: (date) => {}
+),
 ```
-BilionsDatePicker(label: 'Date of Birth', onChanged: (date) => {}),
-```
-
-## DateRangePicker Input
-
+#### **Date Range Code**
 ```dart
  BilionsDateRangePicker(
     label: 'Date of Birth',
@@ -102,6 +151,9 @@ BilionsDatePicker(label: 'Date of Birth', onChanged: (date) => {}),
     },
 ),
 ```
+#### **Date Range & Date Picker Demo**
+<img src="assets/date_picker.gif" width="200" />
+<!-- tabs:end -->
 
 ## TextInput
 

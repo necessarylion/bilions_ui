@@ -25,6 +25,7 @@ part 'inputs/date_input.dart';
 part 'inputs/date_range_input.dart';
 part 'inputs/password_input.dart';
 part 'inputs/text_input.dart';
+part 'list_view/index.dart';
 part 'menu/index.dart';
 part 'menu/menu_list.dart';
 part 'modals/alert/alert_modal.dart';

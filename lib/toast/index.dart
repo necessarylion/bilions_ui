@@ -11,7 +11,7 @@ void toast(BuildContext context, title, {String variant = 'success'}) {
       content: Row(children: [
         BilionsTheme.getIcon(variant),
         mr(1),
-        Text(title),
+        Expanded(child: Text(title)),
       ]),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(

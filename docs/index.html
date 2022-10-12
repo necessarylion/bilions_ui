@@ -14,6 +14,16 @@
         right: 67px;
         z-index: 9999;
       }
+      .docsify-tabs__tab {
+        background: transparent !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-left: none !important;
+      }
+      .docsify-tabs__tab--active {
+        border-right: 1px solid white !important;
+        border-left: 1px solid white !important;
+      }
       section.cover .cover-main {
         margin: 0 auto;
         max-width: 600px;
@@ -21,6 +31,11 @@
       section.cover.show {
         background: transparent !important;
       }
+      .docsify-tabs__content {
+        border: none !important;
+        padding: 19px 0px !important;
+      }
+      
     </style>
   </head>
   <body>
@@ -29,8 +44,11 @@
       window.$docsify = {
         name: 'Bilions Flutter UI',
         repo: 'https://github.com/necessarylion/bilions_ui',
-        themeColor: '#f57842',
-        coverpage: true,
+        themeColor: '#42b983;',
+        coverpage: false,
+        tabs: {
+          theme: 'classic' // default
+        }
       }
     </script>
 

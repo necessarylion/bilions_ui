@@ -101,14 +101,13 @@ class BilionsTable extends StatelessWidget {
 
   Map<int, TableColumnWidth>? getWidths() {
     if (widths != null) {
-      Map<int, TableColumnWidth>? _widths = {};
+      Map<int, TableColumnWidth>? newWidths = {};
 
       widths?.asMap().forEach((index, value) => {
             if (value != null)
-              {_widths[index] = FractionColumnWidth(value / 100)}
+              {newWidths[index] = FractionColumnWidth(value / 100)}
           });
-      console.log(_widths);
-      return _widths;
+      return newWidths;
     }
     return null;
   }
