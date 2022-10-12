@@ -2,12 +2,14 @@ part of bilions_ui;
 
 class BilionsDatePicker extends StatefulWidget {
   final String label;
+  final String variant;
   final Widget? suffixIcon;
   final Function(String) onChanged;
   const BilionsDatePicker({
     Key? key,
     required this.label,
     required this.onChanged,
+    this.variant = 'primary',
     this.suffixIcon,
   }) : super(key: key);
 
@@ -37,6 +39,7 @@ class _BilionsDatePickerState extends State<BilionsDatePicker> {
             });
             widget.onChanged(formattedDateString);
           },
+          variant: widget.variant,
         );
       },
       readOnly: true,
@@ -44,22 +47,22 @@ class _BilionsDatePickerState extends State<BilionsDatePicker> {
       enableSuggestions: false,
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: BilionsColors.primary),
+          borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: BilionsColors.primary,
+            color: BilionsTheme.getColor(widget.variant),
           ),
         ),
         prefixIcon: Icon(
           Icons.calendar_month,
-          color: BilionsColors.primary,
+          color: BilionsTheme.getColor(widget.variant),
         ),
         suffixIcon: widget.suffixIcon,
         filled: true,
-        fillColor: BilionsColors.primaryLight,
+        fillColor: BilionsTheme.getLightColor(widget.variant),
         labelText: widget.label,
-        labelStyle: TextStyle(color: BilionsColors.primary),
+        labelStyle: TextStyle(color: BilionsTheme.getColor(widget.variant)),
       ),
     );
   }

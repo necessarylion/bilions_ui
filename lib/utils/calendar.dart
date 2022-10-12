@@ -4,6 +4,7 @@ openCalendar(
   BuildContext context, {
   required Function onDateChanged,
   String? initialDate,
+  required String variant,
 }) async {
   final DateTime? result = await showDatePicker(
     context: context,
@@ -16,7 +17,7 @@ openCalendar(
       return Theme(
         data: ThemeData().copyWith(
           colorScheme: ThemeData().colorScheme.copyWith(
-                primary: BilionsColors.primary,
+                primary: BilionsTheme.getColor(variant),
               ),
         ),
         child: child!,
@@ -33,6 +34,7 @@ openRangePicker(
   required Function onDateChanged,
   String? startDate,
   String? endDate,
+  required String variant,
 }) async {
   final DateTimeRange? result = await showDateRangePicker(
     context: context,
@@ -51,7 +53,7 @@ openRangePicker(
       return Theme(
         data: ThemeData().copyWith(
           colorScheme: ThemeData().colorScheme.copyWith(
-                primary: BilionsColors.primary,
+                primary: BilionsTheme.getColor(variant),
               ),
         ),
         child: child!,

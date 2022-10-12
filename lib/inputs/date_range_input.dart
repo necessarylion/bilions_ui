@@ -2,11 +2,13 @@ part of bilions_ui;
 
 class BilionsDateRangePicker extends StatefulWidget {
   final String label;
+  final String variant;
   final Widget? suffixIcon;
   final Function(String, String) onChanged;
   const BilionsDateRangePicker({
     Key? key,
     required this.label,
+    this.variant = 'primary',
     required this.onChanged,
     this.suffixIcon,
   }) : super(key: key);
@@ -43,6 +45,7 @@ class _BilionsDateRangePickerState extends State<BilionsDateRangePicker> {
               dateToString(end, format: 'yyyy-MM-dd HH:mm:ss'),
             );
           },
+          variant: widget.variant,
         );
       },
       readOnly: true,
@@ -50,22 +53,22 @@ class _BilionsDateRangePickerState extends State<BilionsDateRangePicker> {
       enableSuggestions: false,
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: BilionsColors.primary),
+          borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: BilionsColors.primary,
+            color: BilionsTheme.getColor(widget.variant),
           ),
         ),
         prefixIcon: Icon(
           Icons.calendar_month,
-          color: BilionsColors.primary,
+          color: BilionsTheme.getColor(widget.variant),
         ),
         suffixIcon: widget.suffixIcon,
         filled: true,
-        fillColor: BilionsColors.primaryLight,
+        fillColor: BilionsTheme.getLightColor(widget.variant),
         labelText: widget.label,
-        labelStyle: TextStyle(color: BilionsColors.primary),
+        labelStyle: TextStyle(color: BilionsTheme.getColor(widget.variant)),
       ),
     );
   }
