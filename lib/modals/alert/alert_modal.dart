@@ -40,7 +40,8 @@ class AlertModal extends StatelessWidget {
                     Expanded(
                       child: Text(
                         title,
-                        style: const TextStyle(
+                        style: TextStyle(
+                          color: BilionsColors.primaryTextColor,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -53,7 +54,7 @@ class AlertModal extends StatelessWidget {
                   message,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 10,
-                  color: BilionsColors.grey,
+                  color: BilionsColors.secondaryTextColor,
                 ),
               ],
             ),
@@ -68,7 +69,7 @@ class AlertModal extends StatelessWidget {
             },
             child: Icon(
               Icons.close,
-              color: BilionsColors.grey,
+              color: BilionsColors.secondaryTextColor,
               size: 20,
             ),
           ),

@@ -6,6 +6,7 @@ class BilionsAlert extends StatelessWidget {
   final String? variant;
   final Function? onClosed;
   final bool showClosedIndicator;
+  final Color? backgroundColor;
   final Widget? icon;
   const BilionsAlert(
     this.title,
@@ -14,6 +15,7 @@ class BilionsAlert extends StatelessWidget {
     this.variant = 'warning',
     this.onClosed,
     this.icon,
+    this.backgroundColor,
     this.showClosedIndicator = false,
   }) : super(key: key);
 
@@ -30,7 +32,7 @@ class BilionsAlert extends StatelessWidget {
               width: 1,
               color: BilionsColors.lightGrey,
             ),
-            color: Colors.white,
+            color: backgroundColor ?? BilionsColors.modalBackground,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +44,8 @@ class BilionsAlert extends StatelessWidget {
                   Expanded(
                     child: Text(
                       title,
-                      style: const TextStyle(
+                      style: TextStyle(
+                        color: BilionsColors.primaryTextColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -55,7 +58,7 @@ class BilionsAlert extends StatelessWidget {
                 message,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 10,
-                color: BilionsColors.grey,
+                color: BilionsColors.secondaryTextColor,
               ),
             ],
           ),
@@ -88,7 +91,7 @@ class BilionsAlert extends StatelessWidget {
               },
               child: Icon(
                 Icons.close,
-                color: BilionsColors.grey,
+                color: BilionsColors.secondaryTextColor,
                 size: 20,
               ),
             ),

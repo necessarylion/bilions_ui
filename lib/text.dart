@@ -45,7 +45,7 @@ class H extends StatelessWidget {
           data ?? '',
           style: style ??
               TextStyle(
-                color: color ?? BilionsColors.black,
+                color: color ?? BilionsColors.primaryTextColor,
                 fontWeight: FontWeight.bold,
                 fontSize: size,
                 height: 1.5,
@@ -113,7 +113,7 @@ class P extends StatelessWidget {
             data ?? '',
             style: style ??
                 TextStyle(
-                  color: color ?? BilionsColors.black,
+                  color: color ?? BilionsColors.primaryTextColor,
                   fontSize: size,
                   height: 1.5,
                 ),
@@ -177,7 +177,7 @@ class Span extends StatelessWidget {
       data ?? '',
       style: style ??
           TextStyle(
-            color: color ?? BilionsColors.black,
+            color: color ?? BilionsColors.primaryTextColor,
             fontSize: size,
             height: 1.5,
           ),
@@ -239,7 +239,7 @@ class TextCenter extends StatelessWidget {
       data ?? '',
       style: style ??
           TextStyle(
-            color: color ?? BilionsColors.black,
+            color: color ?? BilionsColors.primaryTextColor,
             fontSize: size,
             fontWeight: bold ? FontWeight.bold : FontWeight.normal,
             height: 1.5,
@@ -302,7 +302,7 @@ class TextLeft extends StatelessWidget {
       data ?? '',
       style: style ??
           TextStyle(
-            color: color ?? BilionsColors.black,
+            color: color ?? BilionsColors.primaryTextColor,
             fontSize: size,
             fontWeight: bold ? FontWeight.bold : FontWeight.normal,
             height: 1.5,
@@ -365,7 +365,7 @@ class TextRight extends StatelessWidget {
       data ?? '',
       style: style ??
           TextStyle(
-            color: color ?? BilionsColors.black,
+            color: color ?? BilionsColors.primaryTextColor,
             fontSize: size,
             fontWeight: bold ? FontWeight.bold : FontWeight.normal,
             height: 1.5,

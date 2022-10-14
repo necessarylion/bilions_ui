@@ -1,13 +1,14 @@
 part of bilions_ui;
 
-menu(BuildContext context, Widget widget) {
+menu(BuildContext context, Widget widget,
+    {Color? backgroundColor, double? radius, Color? barColor}) {
   showModalBottomSheet(
     context: context,
-    backgroundColor: BilionsColors.white,
-    shape: const RoundedRectangleBorder(
+    backgroundColor: backgroundColor ?? BilionsColors.modalBackground,
+    shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(20),
-        topRight: Radius.circular(20),
+        topLeft: Radius.circular(radius ?? 20),
+        topRight: Radius.circular(radius ?? 20),
       ),
     ),
     builder: (_) => Column(
@@ -18,7 +19,7 @@ menu(BuildContext context, Widget widget) {
           height: 4,
           width: 50,
           decoration: BoxDecoration(
-            color: BilionsColors.primary,
+            color: barColor ?? BilionsColors.primary,
             borderRadius: const BorderRadius.all(Radius.circular(3)),
           ),
         ),

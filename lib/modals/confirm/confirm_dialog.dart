@@ -47,7 +47,8 @@ class ConfirmDialog extends StatelessWidget {
                     Expanded(
                       child: Text(
                         title,
-                        style: const TextStyle(
+                        style: TextStyle(
+                          color: BilionsColors.primaryTextColor,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -61,7 +62,7 @@ class ConfirmDialog extends StatelessWidget {
                     message ?? '',
                     overflow: TextOverflow.ellipsis,
                     maxLines: 10,
-                    color: BilionsColors.grey,
+                    color: BilionsColors.secondaryTextColor,
                   ),
               ],
             ),
@@ -81,7 +82,7 @@ class ConfirmDialog extends StatelessWidget {
                   child: Text(
                     (cancelText ?? 'Cancel').toUpperCase(),
                     style: TextStyle(
-                      color: cancelColor ?? BilionsColors.grey,
+                      color: cancelColor ?? BilionsColors.secondaryTextColor,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
