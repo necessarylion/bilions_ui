@@ -8,6 +8,8 @@ class BilionsPasswordInput extends StatefulWidget {
   final String? initialValue;
   final Function(String)? onChanged;
   final String? variant;
+  final Color? labelColor;
+  final Color? textColor;
   const BilionsPasswordInput({
     Key? key,
     required this.label,
@@ -16,7 +18,9 @@ class BilionsPasswordInput extends StatefulWidget {
     this.controller,
     this.initialValue,
     this.onChanged,
+    this.textColor,
     this.variant = 'primary',
+    this.labelColor,
   }) : super(key: key);
 
   @override
@@ -35,7 +39,6 @@ class _BilionsPasswordInputState extends State<BilionsPasswordInput> {
       autocorrect: false,
       enableSuggestions: false,
       obscureText: secure,
-      initialValue: widget.initialValue,
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
@@ -64,8 +67,11 @@ class _BilionsPasswordInputState extends State<BilionsPasswordInput> {
         fillColor: BilionsTheme.getLightColor(widget.variant),
         labelText: widget.label,
         labelStyle: TextStyle(
-          color: BilionsTheme.getColor(widget.variant),
+          color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
         ),
+      ),
+      style: TextStyle(
+        color: widget.textColor ?? BilionsColors.black,
       ),
     );
   }
@@ -90,6 +96,7 @@ class _BilionsPasswordInputState extends State<BilionsPasswordInput> {
         _controller = TextEditingController();
       });
     }
+    _controller?.text = widget.initialValue ?? '';
     _controller?.addListener(() {
       if (widget.onChanged != null) {
         widget.onChanged!(_controller?.text ?? '');

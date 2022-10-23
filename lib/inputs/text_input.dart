@@ -8,6 +8,10 @@ class BilionsTextInput extends StatefulWidget {
   final String? initialValue;
   final Function(String)? onChanged;
   final String? variant;
+  final Color? textColor;
+  final Color? labelColor;
+  final Function()? onTab;
+  final bool readOnly;
   const BilionsTextInput({
     Key? key,
     required this.label,
@@ -16,7 +20,11 @@ class BilionsTextInput extends StatefulWidget {
     this.controller,
     this.initialValue,
     this.onChanged,
+    this.textColor,
     this.variant = 'primary',
+    this.labelColor,
+    this.onTab,
+    this.readOnly = false,
   }) : super(key: key);
 
   @override
@@ -29,10 +37,14 @@ class _BilionsTextInputState extends State<BilionsTextInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: widget.readOnly,
+      onTap: widget.onTab,
       controller: _controller,
       autocorrect: false,
       enableSuggestions: false,
-      initialValue: widget.initialValue,
+      style: TextStyle(
+        color: widget.textColor ?? BilionsColors.black,
+      ),
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
@@ -48,7 +60,7 @@ class _BilionsTextInputState extends State<BilionsTextInput> {
         fillColor: BilionsTheme.getLightColor(widget.variant),
         labelText: widget.label,
         labelStyle: TextStyle(
-          color: BilionsTheme.getColor(widget.variant),
+          color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
         ),
       ),
     );
@@ -74,6 +86,7 @@ class _BilionsTextInputState extends State<BilionsTextInput> {
         _controller = TextEditingController();
       });
     }
+    _controller?.text = widget.initialValue ?? '';
     _controller?.addListener(() {
       if (widget.onChanged != null) {
         widget.onChanged!(_controller?.text ?? '');

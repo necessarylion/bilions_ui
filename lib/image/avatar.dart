@@ -4,10 +4,14 @@ class Avatar extends StatelessWidget {
   final String src;
   final String? title;
   final String? subTitle;
+  final double? size;
+  final Color? backgroundColor;
   const Avatar(
     this.src, {
     Key? key,
     this.title,
+    this.size = 40,
+    this.backgroundColor,
     this.subTitle,
   }) : super(key: key);
 
@@ -17,8 +21,9 @@ class Avatar extends StatelessWidget {
       children: [
         ImageWidget(
           src,
-          height: 40,
-          width: 40,
+          height: size,
+          borderColor: backgroundColor ?? Colors.transparent,
+          width: size,
           radius: 300,
         ),
         if (title != null) mr(1),

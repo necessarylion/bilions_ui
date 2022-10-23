@@ -8,8 +8,8 @@ openCalendar(
 }) async {
   final DateTime? result = await showDatePicker(
     context: context,
-    firstDate: DateTime(2000),
-    lastDate: DateTime(2200),
+    firstDate: DateTime(1700),
+    lastDate: DateTime(2300),
     initialDate: initialDate != null && initialDate.isNotEmpty
         ? moment(initialDate).parse()
         : now(),
@@ -38,8 +38,8 @@ openRangePicker(
 }) async {
   final DateTimeRange? result = await showDateRangePicker(
     context: context,
-    firstDate: DateTime(2000),
-    lastDate: DateTime(2200),
+    firstDate: DateTime(1900),
+    lastDate: DateTime(2300),
     initialDateRange: DateTimeRange(
       start: startDate != null && startDate.isNotEmpty
           ? moment(startDate).parse()

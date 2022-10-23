@@ -4,12 +4,20 @@ class BilionsDatePicker extends StatefulWidget {
   final String label;
   final String variant;
   final Widget? suffixIcon;
+  final Color? labelColor;
+  final Color? textColor;
   final Function(String) onChanged;
+  final Widget? prefixIcon;
+  final String? initialValue;
   const BilionsDatePicker({
     Key? key,
     required this.label,
     required this.onChanged,
+    this.textColor,
+    this.prefixIcon,
+    this.initialValue,
     this.variant = 'primary',
+    this.labelColor,
     this.suffixIcon,
   }) : super(key: key);
 
@@ -54,15 +62,21 @@ class _BilionsDatePickerState extends State<BilionsDatePicker> {
             color: BilionsTheme.getColor(widget.variant),
           ),
         ),
-        prefixIcon: Icon(
-          Icons.calendar_month,
-          color: BilionsTheme.getColor(widget.variant),
-        ),
+        prefixIcon: widget.prefixIcon ??
+            Icon(
+              Icons.calendar_month,
+              color: widget.textColor ?? BilionsTheme.getColor(widget.variant),
+            ),
         suffixIcon: widget.suffixIcon,
         filled: true,
         fillColor: BilionsTheme.getLightColor(widget.variant),
         labelText: widget.label,
-        labelStyle: TextStyle(color: BilionsTheme.getColor(widget.variant)),
+        labelStyle: TextStyle(
+          color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
+        ),
+      ),
+      style: TextStyle(
+        color: widget.textColor ?? BilionsColors.black,
       ),
     );
   }
@@ -71,5 +85,19 @@ class _BilionsDatePickerState extends State<BilionsDatePicker> {
   void dispose() {
     txt.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    if (widget.initialValue != null) {
+      DateTime initialDate = moment(widget.initialValue!).parse();
+      txt.text = dateToString(initialDate);
+      String formattedDateString =
+          dateToString(initialDate, format: 'yyyy-MM-dd HH:mm:ss');
+      setState(() {
+        date = formattedDateString;
+      });
+    }
+    super.initState();
   }
 }

@@ -10,6 +10,8 @@ class ConfirmDialog extends StatelessWidget {
   final Color? cancelColor;
   final Function() confirmed;
   final Function()? canceled;
+  final Color? lineColor;
+  final double? lineThickness;
   const ConfirmDialog(
     this.title, {
     Key? key,
@@ -21,6 +23,8 @@ class ConfirmDialog extends StatelessWidget {
     this.confirmColor,
     this.cancelColor,
     this.variant = 'primary',
+    this.lineColor,
+    this.lineThickness,
   }) : super(key: key);
 
   @override
@@ -68,7 +72,7 @@ class ConfirmDialog extends StatelessWidget {
             ),
           ),
         ),
-        horizontalLine(),
+        horizontalLine(color: lineColor, thickness: lineThickness),
         Row(
           children: [
             Expanded(
@@ -90,7 +94,7 @@ class ConfirmDialog extends StatelessWidget {
                 ),
               ),
             ),
-            verticalLine(),
+            verticalLine(color: lineColor, thickness: lineThickness),
             Expanded(
               child: InkWell(
                 onTap: () {
