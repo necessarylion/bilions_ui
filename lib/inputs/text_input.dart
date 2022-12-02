@@ -10,7 +10,9 @@ class BilionsTextInput extends StatefulWidget {
   final String? variant;
   final Color? textColor;
   final Color? labelColor;
+  final String? placeholder;
   final Function()? onTab;
+  final int? maxLines;
   final bool readOnly;
   const BilionsTextInput({
     Key? key,
@@ -20,6 +22,8 @@ class BilionsTextInput extends StatefulWidget {
     this.controller,
     this.initialValue,
     this.onChanged,
+    this.placeholder,
+    this.maxLines,
     this.textColor,
     this.variant = 'primary',
     this.labelColor,
@@ -41,6 +45,7 @@ class _BilionsTextInputState extends State<BilionsTextInput> {
       onTap: widget.onTab,
       controller: _controller,
       autocorrect: false,
+      maxLines: widget.maxLines,
       enableSuggestions: false,
       style: TextStyle(
         color: widget.textColor ?? BilionsColors.black,
@@ -57,11 +62,16 @@ class _BilionsTextInputState extends State<BilionsTextInput> {
         prefixIcon: widget.prefixIcon,
         suffixIcon: widget.suffixIcon,
         filled: true,
+        hintText: widget.placeholder,
+        hintStyle: TextStyle(
+          color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
+        ),
         fillColor: BilionsTheme.getLightColor(widget.variant),
         labelText: widget.label,
         labelStyle: TextStyle(
           color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
         ),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
   }

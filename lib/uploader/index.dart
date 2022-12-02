@@ -3,36 +3,42 @@ part of bilions_ui;
 openUploader(
   BuildContext context, {
   required Function(FileInfo) onPicked,
+  Color? lineColor,
+  double? lineThickness,
   String variant = 'primary',
 }) {
   menu(
     context,
-    MenuList([
-      MenuListItem(
-        Icon(
-          Icons.photo_library_rounded,
-          color: BilionsTheme.getColor(variant),
+    MenuList(
+      [
+        MenuListItem(
+          Icon(
+            Icons.photo_library_rounded,
+            color: BilionsTheme.getColor(variant),
+          ),
+          title: 'Gallery',
+          subTitle: 'Select image from your photo gallery',
+          onPressed: () async {
+            FileInfo file = await showFileUpload(ImageSource.gallery);
+            onPicked(file);
+          },
         ),
-        title: 'Gallery',
-        subTitle: 'Select image from your photo gallery',
-        onPressed: () async {
-          FileInfo file = await showFileUpload(ImageSource.gallery);
-          onPicked(file);
-        },
-      ),
-      MenuListItem(
-        Icon(
-          Icons.camera,
-          color: BilionsTheme.getColor(variant),
+        MenuListItem(
+          Icon(
+            Icons.camera,
+            color: BilionsTheme.getColor(variant),
+          ),
+          title: 'Camera',
+          subTitle: 'Open camera to take photo',
+          onPressed: () async {
+            FileInfo file = await showFileUpload(ImageSource.camera);
+            onPicked(file);
+          },
         ),
-        title: 'Camera',
-        subTitle: 'Open camera to take photo',
-        onPressed: () async {
-          FileInfo file = await showFileUpload(ImageSource.camera);
-          onPicked(file);
-        },
-      ),
-    ]),
+      ],
+      lineColor: lineColor,
+      lineThickness: lineThickness,
+    ),
   );
 }
 

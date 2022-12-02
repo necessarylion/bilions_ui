@@ -74,6 +74,7 @@ class _BilionsDatePickerState extends State<BilionsDatePicker> {
         labelStyle: TextStyle(
           color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
         ),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       style: TextStyle(
         color: widget.textColor ?? BilionsColors.black,

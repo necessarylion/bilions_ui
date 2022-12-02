@@ -2,8 +2,14 @@ part of bilions_ui;
 
 class MenuList extends StatelessWidget {
   final List<MenuListItem> list;
-
-  const MenuList(this.list, {Key? key}) : super(key: key);
+  final Color? lineColor;
+  final double? lineThickness;
+  const MenuList(
+    this.list, {
+    Key? key,
+    this.lineColor,
+    this.lineThickness,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +57,7 @@ class MenuList extends StatelessWidget {
               ],
             ),
           ),
-          horizontalLine()
+          horizontalLine(color: lineColor, thickness: lineThickness),
         ],
       ),
     );
