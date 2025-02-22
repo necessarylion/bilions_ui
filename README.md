@@ -1,6 +1,6 @@
 # Bilions Flutter UI
 
-[Documentation Here](https://flutter-ui.bilions.org/#/)
+[Documentation Here](https://necessarylion.github.io/bilions_ui/#/)
 
 ![Preview](https://github.com/necessarylion/bilions_ui/raw/master/preview.png)
 
