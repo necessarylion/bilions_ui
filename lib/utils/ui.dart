@@ -27,7 +27,7 @@ class BilionsUI {
   Color get primary => colorConfig?.primary ?? HexColor('#3E519D');
   Color get primaryLight => colorConfig?.primaryLight ?? HexColor('#EBF2FE');
   Color get primaryTextColor =>
-      colorConfig?.primaryTextColor ?? HexColor('#FFFFFF');
+      colorConfig?.primaryTextColor ?? HexColor('#000000');
   Color get secondary => colorConfig?.secondary ?? HexColor('#76849D');
   Color get secondaryTextColor =>
       colorConfig?.secondaryTextColor ?? HexColor('#76849D');

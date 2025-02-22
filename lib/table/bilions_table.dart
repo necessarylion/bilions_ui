@@ -16,6 +16,7 @@ class BilionsTable extends StatelessWidget {
     required this.header,
     required this.body,
     this.radius = 6,
+    // column width
     this.widths,
     this.gap = 4,
   });
@@ -103,10 +104,9 @@ class BilionsTable extends StatelessWidget {
     if (widths != null) {
       Map<int, TableColumnWidth>? newWidths = {};
 
-      widths?.asMap().forEach((index, value) => {
-            if (value != null)
-              {newWidths[index] = FractionColumnWidth(value / 100)}
-          });
+      widths?.asMap().forEach((index, value) {
+        if (value != null) newWidths[index] = FractionColumnWidth(value / 100);
+      });
       return newWidths;
     }
     return null;

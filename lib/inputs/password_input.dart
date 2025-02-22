@@ -55,9 +55,7 @@ class _BilionsPasswordInputState extends State<BilionsPasswordInput> {
             ),
         suffixIcon: widget.suffixIcon ??
             IconButton(
-              onPressed: () => {
-                setState(() => {secure = !secure})
-              },
+              onPressed: () => {setState(() => secure = !secure)},
               icon: Icon(
                 !secure ? Icons.visibility : Icons.visibility_off,
                 color: BilionsTheme.getColor(widget.variant),
