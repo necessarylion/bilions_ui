@@ -24,10 +24,10 @@ class BPasswordInput extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<BPasswordInput> createState() => _BilionsPasswordInputState();
+  State<BPasswordInput> createState() => _BPasswordInputState();
 }
 
-class _BilionsPasswordInputState extends State<BPasswordInput> {
+class _BPasswordInputState extends State<BPasswordInput> {
   TextEditingController? _controller;
 
   bool secure = true;

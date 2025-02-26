@@ -22,10 +22,10 @@ class BDatePicker extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<BDatePicker> createState() => _BilionsDatePickerState();
+  State<BDatePicker> createState() => _BDatePickerState();
 }
 
-class _BilionsDatePickerState extends State<BDatePicker> {
+class _BDatePickerState extends State<BDatePicker> {
   final TextEditingController txt = TextEditingController();
 
   String? date;

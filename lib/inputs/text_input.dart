@@ -32,10 +32,10 @@ class BTextInput extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<BTextInput> createState() => _BilionsTextInputState();
+  State<BTextInput> createState() => _BTextInputState();
 }
 
-class _BilionsTextInputState extends State<BTextInput> {
+class _BTextInputState extends State<BTextInput> {
   TextEditingController? _controller;
 
   @override

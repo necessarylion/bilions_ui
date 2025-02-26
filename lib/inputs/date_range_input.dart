@@ -24,10 +24,10 @@ class BDateRangePicker extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<BDateRangePicker> createState() => _BilionsDateRangePickerState();
+  State<BDateRangePicker> createState() => _BDateRangePickerState();
 }
 
-class _BilionsDateRangePickerState extends State<BDateRangePicker> {
+class _BDateRangePickerState extends State<BDateRangePicker> {
   final TextEditingController txt = TextEditingController();
 
   String? startDate;
