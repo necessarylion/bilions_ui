@@ -1,18 +1,18 @@
 part of bilions_ui;
 
-class BilionsAlert extends StatelessWidget {
+class BAlert extends StatelessWidget {
   final String title;
   final String message;
-  final String? variant;
+  final BVariant? variant;
   final Function? onClosed;
   final bool showClosedIndicator;
   final Color? backgroundColor;
   final Widget? icon;
-  const BilionsAlert(
+  const BAlert(
     this.title,
     this.message, {
     Key? key,
-    this.variant = 'warning',
+    this.variant = BVariant.warning,
     this.onClosed,
     this.icon,
     this.backgroundColor,
@@ -40,7 +40,7 @@ class BilionsAlert extends StatelessWidget {
               Row(
                 children: [
                   icon ?? BilionsTheme.getIcon(variant),
-                  mr(0.5),
+                  const MarginRight(0.5),
                   Expanded(
                     child: Text(
                       title,
@@ -53,7 +53,7 @@ class BilionsAlert extends StatelessWidget {
                   ),
                 ],
               ),
-              mb(0.5),
+              const MarginBottom(0.5),
               Span(
                 message,
                 overflow: TextOverflow.ellipsis,

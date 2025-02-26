@@ -30,7 +30,7 @@ class BilionsColors {
   static get white => BilionsUI().white;
 }
 
-class ColorConfig {
+class BColorConfig {
   Color? danger;
   Color? dangerLight;
   Color? info;
@@ -53,7 +53,7 @@ class ColorConfig {
   Color? secondary;
   Color? lightGrey;
 
-  ColorConfig({
+  BColorConfig({
     this.danger,
     this.dangerLight,
     this.info,

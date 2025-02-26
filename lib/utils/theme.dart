@@ -1,36 +1,36 @@
 part of bilions_ui;
 
 class BilionsTheme {
-  static Color getColor(String? variant) {
-    if (variant == 'success') {
+  static Color getColor(BVariant? variant) {
+    if (variant == BVariant.success) {
       return BilionsColors.success;
     }
-    if (variant == 'danger') {
+    if (variant == BVariant.danger) {
       return BilionsColors.danger;
     }
-    if (variant == 'warning') {
+    if (variant == BVariant.warning) {
       return BilionsColors.warning;
     }
-    if (variant == 'info') {
+    if (variant == BVariant.info) {
       return BilionsColors.info;
     }
     return BilionsColors.primary;
   }
 
-  static Widget getIcon(String? variant) {
-    if (variant == 'success') {
+  static Widget getIcon(BVariant? variant) {
+    if (variant == BVariant.success) {
       return Icon(
         Icons.check_circle,
         color: getColor(variant),
       );
     }
-    if (variant == 'danger') {
+    if (variant == BVariant.danger) {
       return Icon(
         Icons.error_rounded,
         color: getColor(variant),
       );
     }
-    if (variant == 'warning') {
+    if (variant == BVariant.warning) {
       return Icon(
         Icons.info,
         color: getColor(variant),
@@ -42,17 +42,17 @@ class BilionsTheme {
     );
   }
 
-  static Color getLightColor(String? variant) {
-    if (variant == 'success') {
+  static Color getLightColor(BVariant? variant) {
+    if (variant == BVariant.success) {
       return BilionsColors.successLight;
     }
-    if (variant == 'danger') {
+    if (variant == BVariant.danger) {
       return BilionsColors.dangerLight;
     }
-    if (variant == 'warning') {
+    if (variant == BVariant.warning) {
       return BilionsColors.warningLight;
     }
-    if (variant == 'info') {
+    if (variant == BVariant.info) {
       return BilionsColors.infoLight;
     }
     return BilionsColors.primaryLight;

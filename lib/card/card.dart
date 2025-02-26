@@ -1,12 +1,12 @@
 part of bilions_ui;
 
-class CardWidget extends StatelessWidget {
+class BCard extends StatelessWidget {
   final Widget body;
   final Widget? header;
   final Widget? footer;
   final String? title;
   final bool showLine;
-  const CardWidget({
+  const BCard({
     Key? key,
     this.header,
     this.title,
@@ -24,7 +24,7 @@ class CardWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (_getHeader() != null) _getHeader(),
-          if (_getHeader() != null && showLine) horizontalLine(),
+          if (_getHeader() != null && showLine) const HorizontalLine(),
           Padding(
             padding: EdgeInsets.only(
               top: 5,
@@ -34,7 +34,7 @@ class CardWidget extends StatelessWidget {
             ),
             child: body,
           ),
-          if (footer != null && showLine) horizontalLine(),
+          if (footer != null && showLine) const HorizontalLine(),
           if (footer != null)
             Container(
               padding: const EdgeInsets.only(

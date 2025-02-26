@@ -3,7 +3,7 @@ part of bilions_ui;
 class BilionsUI {
   static final BilionsUI _bilionsUI = BilionsUI._internal();
 
-  ColorConfig? colorConfig;
+  BColorConfig? colorConfig;
 
   factory BilionsUI() {
     return _bilionsUI;
@@ -37,7 +37,7 @@ class BilionsUI {
   Color get warningLight => colorConfig?.warningLight ?? HexColor('##fff3cd');
   Color get white => colorConfig?.white ?? HexColor('#FFFFFF');
 
-  setColors(ColorConfig config) {
+  setColors(BColorConfig config) {
     colorConfig = config;
   }
 }

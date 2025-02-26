@@ -1,20 +1,20 @@
 part of bilions_ui;
 
-class BilionsTextInput extends StatefulWidget {
+class BTextInput extends StatefulWidget {
   final String label;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final String? initialValue;
   final Function(String)? onChanged;
-  final String? variant;
+  final BVariant? variant;
   final Color? textColor;
   final Color? labelColor;
   final String? placeholder;
   final Function()? onTab;
   final int? maxLines;
   final bool readOnly;
-  const BilionsTextInput({
+  const BTextInput({
     Key? key,
     required this.label,
     this.prefixIcon,
@@ -25,17 +25,17 @@ class BilionsTextInput extends StatefulWidget {
     this.placeholder,
     this.maxLines,
     this.textColor,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.labelColor,
     this.onTab,
     this.readOnly = false,
   }) : super(key: key);
 
   @override
-  State<BilionsTextInput> createState() => _BilionsTextInputState();
+  State<BTextInput> createState() => _BilionsTextInputState();
 }
 
-class _BilionsTextInputState extends State<BilionsTextInput> {
+class _BilionsTextInputState extends State<BTextInput> {
   TextEditingController? _controller;
 
   @override

@@ -1,5 +1,10 @@
 part of bilions_ui;
 
-confirm(BuildContext context, Widget confirmWidget) {
-  modal(context, confirmWidget);
+class ShowBConfirmDialog {
+  final BuildContext context;
+  final Widget confirmWidget;
+
+  ShowBConfirmDialog(this.context, this.confirmWidget) {
+    BModal(context, confirmWidget);
+  }
 }

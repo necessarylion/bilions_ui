@@ -1,9 +1,12 @@
 part of bilions_ui;
 
-class Variant {
-  static get danger => 'danger';
-  static get info => 'info';
-  static get primary => 'primary';
-  static get success => 'success';
-  static get warning => 'warning';
+enum BVariant {
+  danger('danger'),
+  info('info'),
+  primary('primary'),
+  success('success'),
+  warning('warning');
+
+  final String value;
+  const BVariant(this.value);
 }

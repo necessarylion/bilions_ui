@@ -1,8 +1,8 @@
 part of bilions_ui;
 
-class ConfirmDialog extends StatelessWidget {
+class BConfirmDialog extends StatelessWidget {
   final String title;
-  final String? variant;
+  final BVariant? variant;
   final String? message;
   final String? confirmText;
   final String? cancelText;
@@ -12,7 +12,7 @@ class ConfirmDialog extends StatelessWidget {
   final Function()? canceled;
   final Color? lineColor;
   final double? lineThickness;
-  const ConfirmDialog(
+  const BConfirmDialog(
     this.title, {
     Key? key,
     this.message,
@@ -22,7 +22,7 @@ class ConfirmDialog extends StatelessWidget {
     this.cancelText,
     this.confirmColor,
     this.cancelColor,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.lineColor,
     this.lineThickness,
   }) : super(key: key);
@@ -47,7 +47,7 @@ class ConfirmDialog extends StatelessWidget {
                 Row(
                   children: [
                     BilionsTheme.getIcon(variant),
-                    mr(0.5),
+                    const MarginRight(0.5),
                     Expanded(
                       child: Text(
                         title,
@@ -60,7 +60,7 @@ class ConfirmDialog extends StatelessWidget {
                     ),
                   ],
                 ),
-                mb(0.5),
+                const MarginBottom(0.5),
                 if (message != null)
                   Span(
                     message ?? '',
@@ -72,7 +72,7 @@ class ConfirmDialog extends StatelessWidget {
             ),
           ),
         ),
-        horizontalLine(color: lineColor, thickness: lineThickness),
+        HorizontalLine(color: lineColor, thickness: lineThickness),
         Row(
           children: [
             Expanded(
@@ -94,7 +94,7 @@ class ConfirmDialog extends StatelessWidget {
                 ),
               ),
             ),
-            verticalLine(color: lineColor, thickness: lineThickness),
+            VerticalLine(color: lineColor, thickness: lineThickness),
             Expanded(
               child: InkWell(
                 onTap: () {

@@ -1,8 +1,8 @@
 part of bilions_ui;
 
-class BilionsDateRangePicker extends StatefulWidget {
+class BDateRangePicker extends StatefulWidget {
   final String label;
-  final String variant;
+  final BVariant variant;
   final Widget? suffixIcon;
   final Color? labelColor;
   final Color? textColor;
@@ -10,11 +10,11 @@ class BilionsDateRangePicker extends StatefulWidget {
   final String? initialStartDate;
   final String? initialEndDate;
   final Function(String, String) onChanged;
-  const BilionsDateRangePicker({
+  const BDateRangePicker({
     Key? key,
     required this.label,
     this.textColor,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.labelColor,
     this.prefixIcon,
     this.initialEndDate,
@@ -24,10 +24,10 @@ class BilionsDateRangePicker extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<BilionsDateRangePicker> createState() => _BilionsDateRangePickerState();
+  State<BDateRangePicker> createState() => _BilionsDateRangePickerState();
 }
 
-class _BilionsDateRangePickerState extends State<BilionsDateRangePicker> {
+class _BilionsDateRangePickerState extends State<BDateRangePicker> {
   final TextEditingController txt = TextEditingController();
 
   String? startDate;
@@ -38,8 +38,8 @@ class _BilionsDateRangePickerState extends State<BilionsDateRangePicker> {
     return TextFormField(
       controller: txt,
       onTap: () {
-        openRangePicker(
-          context,
+        BCalendar.openDateRangePicker(
+          context: context,
           startDate: startDate,
           endDate: endDate,
           onDateChanged: (start, end) {

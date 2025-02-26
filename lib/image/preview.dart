@@ -1,12 +1,19 @@
 part of bilions_ui;
 
-class ImagePreviewModal extends StatelessWidget {
+class BImagePreview extends StatelessWidget {
   final List images;
   final int? index;
-  const ImagePreviewModal(
+  final bool showCloseButton;
+  final Widget? closeButton;
+  final Color? backgroundColor;
+
+  const BImagePreview(
     this.images, {
     Key? key,
     this.index = 0,
+    this.showCloseButton = false,
+    this.closeButton,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -16,7 +23,7 @@ class ImagePreviewModal extends StatelessWidget {
         PhotoViewGallery.builder(
           pageController: PageController(initialPage: index ?? 0),
           backgroundDecoration: BoxDecoration(
-            color: BilionsColors.dark,
+            color: backgroundColor ?? BilionsColors.dark,
           ),
           itemCount: images.length,
           builder: (context, index) {
@@ -26,19 +33,23 @@ class ImagePreviewModal extends StatelessWidget {
             );
           },
         ),
-        Positioned(
-          top: 50,
-          right: 20,
-          child: IconPressButton(
-            Icon(
-              Icons.close,
-              color: BilionsColors.white,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+        if (showCloseButton)
+          Positioned(
+            top: 50,
+            right: 20,
+            child: closeButton ??
+                BButton(
+                  width: 40,
+                  height: 40,
+                  icon: Icon(
+                    Icons.close,
+                    color: BilionsColors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
           ),
-        ),
       ],
     );
   }

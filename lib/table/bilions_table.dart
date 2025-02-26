@@ -1,17 +1,17 @@
 part of bilions_ui;
 
-class BilionsTable extends StatelessWidget {
+class BTable extends StatelessWidget {
   final List<Widget> header;
   final List<List<Widget>> body;
   final double? bodyHeight;
-  final String variant;
+  final BVariant variant;
   final double radius;
   final double gap;
   final List<double?>? widths;
 
-  const BilionsTable({
+  const BTable({
     super.key,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.bodyHeight,
     required this.header,
     required this.body,

@@ -1,31 +1,31 @@
 part of bilions_ui;
 
-class BilionsDatePicker extends StatefulWidget {
+class BDatePicker extends StatefulWidget {
   final String label;
-  final String variant;
+  final BVariant variant;
   final Widget? suffixIcon;
   final Color? labelColor;
   final Color? textColor;
   final Function(String) onChanged;
   final Widget? prefixIcon;
   final String? initialValue;
-  const BilionsDatePicker({
+  const BDatePicker({
     Key? key,
     required this.label,
     required this.onChanged,
     this.textColor,
     this.prefixIcon,
     this.initialValue,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.labelColor,
     this.suffixIcon,
   }) : super(key: key);
 
   @override
-  State<BilionsDatePicker> createState() => _BilionsDatePickerState();
+  State<BDatePicker> createState() => _BilionsDatePickerState();
 }
 
-class _BilionsDatePickerState extends State<BilionsDatePicker> {
+class _BilionsDatePickerState extends State<BDatePicker> {
   final TextEditingController txt = TextEditingController();
 
   String? date;
@@ -35,8 +35,8 @@ class _BilionsDatePickerState extends State<BilionsDatePicker> {
     return TextFormField(
       controller: txt,
       onTap: () {
-        openCalendar(
-          context,
+        BCalendar.openDatePicker(
+          context: context,
           initialDate: date,
           onDateChanged: (result) {
             txt.text = dateToString(result);

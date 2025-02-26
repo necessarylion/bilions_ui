@@ -128,7 +128,7 @@ class P extends StatelessWidget {
             textWidthBasis: textWidthBasis,
             textHeightBehavior: textHeightBehavior,
           ),
-          mb(0.5),
+          const MarginBottom(0.5),
         ],
       ),
     );

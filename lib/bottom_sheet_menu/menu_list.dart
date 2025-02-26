@@ -1,11 +1,11 @@
 part of bilions_ui;
 
-class MenuList extends StatelessWidget {
+class BBottomSheetMenuList extends StatelessWidget {
   final List<MenuListItem> list;
   final Color? lineColor;
   final double? lineThickness;
-  const MenuList(
-    this.list, {
+  const BBottomSheetMenuList({
+    required this.list,
     Key? key,
     this.lineColor,
     this.lineThickness,
@@ -37,7 +37,7 @@ class MenuList extends StatelessWidget {
                   ),
                   child: list.icon,
                 ),
-                mr(1),
+                const MarginRight(1),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +57,7 @@ class MenuList extends StatelessWidget {
               ],
             ),
           ),
-          horizontalLine(color: lineColor, thickness: lineThickness),
+          HorizontalLine(color: lineColor, thickness: lineThickness),
         ],
       ),
     );

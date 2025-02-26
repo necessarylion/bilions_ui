@@ -1,16 +1,16 @@
 part of bilions_ui;
 
-class BilionsPasswordInput extends StatefulWidget {
+class BPasswordInput extends StatefulWidget {
   final String label;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final String? initialValue;
   final Function(String)? onChanged;
-  final String? variant;
+  final BVariant? variant;
   final Color? labelColor;
   final Color? textColor;
-  const BilionsPasswordInput({
+  const BPasswordInput({
     Key? key,
     required this.label,
     this.prefixIcon,
@@ -19,15 +19,15 @@ class BilionsPasswordInput extends StatefulWidget {
     this.initialValue,
     this.onChanged,
     this.textColor,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.labelColor,
   }) : super(key: key);
 
   @override
-  State<BilionsPasswordInput> createState() => _BilionsPasswordInputState();
+  State<BPasswordInput> createState() => _BilionsPasswordInputState();
 }
 
-class _BilionsPasswordInputState extends State<BilionsPasswordInput> {
+class _BilionsPasswordInputState extends State<BPasswordInput> {
   TextEditingController? _controller;
 
   bool secure = true;

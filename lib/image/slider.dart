@@ -1,9 +1,9 @@
 part of bilions_ui;
 
-class ImageSlider extends StatelessWidget {
+class BImageSlider extends StatelessWidget {
   final List images;
   final double? ratio;
-  const ImageSlider(this.images, {Key? key, this.ratio}) : super(key: key);
+  const BImageSlider(this.images, {Key? key, this.ratio}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,13 @@ class ImageSlider extends StatelessWidget {
             .mapIndexed(
               (e, index) => InkWell(
                 onTap: () {
-                  preview(context, images, index: index);
+                  BImagePreviewModal.show(
+                    context: context,
+                    images: images,
+                    index: index,
+                  );
                 },
-                child: ImageWidget(
+                child: BImage(
                   e,
                   fit: BoxFit.cover,
                   radius: 10,
