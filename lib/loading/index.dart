@@ -10,7 +10,7 @@ class BLoader {
         backgroundColor: Colors.transparent,
         body: Center(
           child: CircularProgressIndicator(
-            color: color ?? BilionsColors.primary,
+            color: color ?? BColors.primary,
           ),
         ),
       ),

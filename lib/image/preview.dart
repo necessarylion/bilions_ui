@@ -23,7 +23,7 @@ class BImagePreview extends StatelessWidget {
         PhotoViewGallery.builder(
           pageController: PageController(initialPage: index ?? 0),
           backgroundDecoration: BoxDecoration(
-            color: backgroundColor ?? BilionsColors.dark,
+            color: backgroundColor ?? BColors.dark,
           ),
           itemCount: images.length,
           builder: (context, index) {
@@ -43,7 +43,7 @@ class BImagePreview extends StatelessWidget {
                   height: 40,
                   icon: Icon(
                     Icons.close,
-                    color: BilionsColors.white,
+                    color: BColors.white,
                   ),
                   onPressed: () {
                     Navigator.pop(context);

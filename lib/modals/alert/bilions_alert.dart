@@ -30,9 +30,9 @@ class BAlert extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
               width: 1,
-              color: BilionsColors.lightGrey,
+              color: BColors.lightGrey,
             ),
-            color: backgroundColor ?? BilionsColors.modalBackground,
+            color: backgroundColor ?? BColors.modalBackground,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class BAlert extends StatelessWidget {
                     child: Text(
                       title,
                       style: TextStyle(
-                        color: BilionsColors.primaryTextColor,
+                        color: BColors.primaryTextColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -58,7 +58,7 @@ class BAlert extends StatelessWidget {
                 message,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 10,
-                color: BilionsColors.secondaryTextColor,
+                color: BColors.secondaryTextColor,
               ),
             ],
           ),
@@ -91,7 +91,7 @@ class BAlert extends StatelessWidget {
               },
               child: Icon(
                 Icons.close,
-                color: BilionsColors.secondaryTextColor,
+                color: BColors.secondaryTextColor,
                 size: 20,
               ),
             ),

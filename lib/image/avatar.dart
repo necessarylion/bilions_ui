@@ -35,7 +35,7 @@ class BAvatar extends StatelessWidget {
               H(title),
               Span(
                 subTitle,
-                color: BilionsColors.grey,
+                color: BColors.grey,
               ),
             ],
           ))

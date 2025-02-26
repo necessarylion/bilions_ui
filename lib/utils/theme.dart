@@ -3,18 +3,18 @@ part of bilions_ui;
 class BilionsTheme {
   static Color getColor(BVariant? variant) {
     if (variant == BVariant.success) {
-      return BilionsColors.success;
+      return BColors.success;
     }
     if (variant == BVariant.danger) {
-      return BilionsColors.danger;
+      return BColors.danger;
     }
     if (variant == BVariant.warning) {
-      return BilionsColors.warning;
+      return BColors.warning;
     }
     if (variant == BVariant.info) {
-      return BilionsColors.info;
+      return BColors.info;
     }
-    return BilionsColors.primary;
+    return BColors.primary;
   }
 
   static Widget getIcon(BVariant? variant) {
@@ -44,17 +44,17 @@ class BilionsTheme {
 
   static Color getLightColor(BVariant? variant) {
     if (variant == BVariant.success) {
-      return BilionsColors.successLight;
+      return BColors.successLight;
     }
     if (variant == BVariant.danger) {
-      return BilionsColors.dangerLight;
+      return BColors.dangerLight;
     }
     if (variant == BVariant.warning) {
-      return BilionsColors.warningLight;
+      return BColors.warningLight;
     }
     if (variant == BVariant.info) {
-      return BilionsColors.infoLight;
+      return BColors.infoLight;
     }
-    return BilionsColors.primaryLight;
+    return BColors.primaryLight;
   }
 }

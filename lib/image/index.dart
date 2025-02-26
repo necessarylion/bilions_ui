@@ -25,7 +25,7 @@ class BImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: borderColor ?? BilionsColors.white,
+        color: borderColor ?? BColors.white,
         borderRadius: BorderRadius.all(Radius.circular(radius)),
       ),
       padding: EdgeInsets.all(borderWidth),

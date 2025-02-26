@@ -1,5 +1,7 @@
 part of bilions_ui;
 
+/// BilionsUI is a singleton class that provides a global configuration for the Bilions UI.
+/// It is used to set and get the colors for the UI.
 class BilionsUI {
   static final BilionsUI _bilionsUI = BilionsUI._internal();
 

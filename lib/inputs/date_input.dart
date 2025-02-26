@@ -77,7 +77,7 @@ class _BDatePickerState extends State<BDatePicker> {
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       style: TextStyle(
-        color: widget.textColor ?? BilionsColors.black,
+        color: widget.textColor ?? BColors.black,
       ),
     );
   }

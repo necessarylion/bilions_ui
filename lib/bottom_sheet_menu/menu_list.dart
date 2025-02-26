@@ -1,5 +1,17 @@
 part of bilions_ui;
 
+/// BBottomSheetMenuList is a widget that shows a list of items in a bottom sheet menu.
+/// It is used to show a list of items in a bottom sheet menu.
+///
+/// Example
+/// ```
+/// BBottomSheetMenuList(
+///   list: [
+///     MenuListItem(title: 'Item 1', onPressed: () {}),
+///     MenuListItem(title: 'Item 2', onPressed: () {}),
+///   ],
+/// );
+/// ```
 class BBottomSheetMenuList extends StatelessWidget {
   final List<MenuListItem> list;
   final Color? lineColor;
@@ -32,7 +44,7 @@ class BBottomSheetMenuList extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: BilionsColors.primaryLight,
+                    color: BColors.primaryLight,
                     borderRadius: const BorderRadius.all(Radius.circular(300)),
                   ),
                   child: list.icon,
@@ -46,14 +58,14 @@ class BBottomSheetMenuList extends StatelessWidget {
                       if (list.subTitle != null)
                         Span(
                           list.subTitle,
-                          color: BilionsColors.grey,
+                          color: BColors.grey,
                           size: 13,
                         )
                     ],
                   ),
                 ),
                 list.subFixIcon ??
-                    Icon(Icons.chevron_right, color: BilionsColors.primary)
+                    Icon(Icons.chevron_right, color: BColors.primary)
               ],
             ),
           ),

@@ -48,7 +48,7 @@ class _BTextInputState extends State<BTextInput> {
       maxLines: widget.maxLines,
       enableSuggestions: false,
       style: TextStyle(
-        color: widget.textColor ?? BilionsColors.black,
+        color: widget.textColor ?? BColors.black,
       ),
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(

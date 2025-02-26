@@ -19,7 +19,7 @@ class BModal {
       context: context,
       barrierDismissible: true,
       builder: (context) => Dialog(
-        backgroundColor: backgroundColor ?? BilionsColors.modalBackground,
+        backgroundColor: backgroundColor ?? BColors.modalBackground,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(radius ?? 5)),
         ),

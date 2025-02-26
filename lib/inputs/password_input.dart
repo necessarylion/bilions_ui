@@ -70,7 +70,7 @@ class _BPasswordInputState extends State<BPasswordInput> {
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       style: TextStyle(
-        color: widget.textColor ?? BilionsColors.black,
+        color: widget.textColor ?? BColors.black,
       ),
     );
   }

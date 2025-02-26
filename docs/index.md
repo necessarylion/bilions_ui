@@ -117,7 +117,7 @@ menu(
     MenuListItem(
       Icon(
         Icons.copy,
-        color: BilionsColors.success,
+        color: BColors.success,
         size: 20,
       ),
       title: 'Clone',
@@ -128,7 +128,7 @@ menu(
     MenuListItem(
       Icon(
         Icons.delete,
-        color: BilionsColors.danger,
+        color: BColors.danger,
         size: 20,
       ),
       title: 'Delete',

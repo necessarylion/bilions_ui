@@ -1,7 +1,31 @@
 part of bilions_ui;
 
 class BBottomSheetMenu {
-  // show bottom sheet menu
+  /// Show a bottom sheet menu
+  ///
+  /// [context] is the context of the widget
+  /// [widget] is the widget to show in the bottom sheet
+  /// [backgroundColor] is the background color of the bottom sheet
+  /// [radius] is the radius of the bottom sheet
+  /// [barColor] is the color of the bar at the top of the bottom sheet
+  ///
+  /// Example
+  /// ```
+  /// BBottomSheetMenu.show(
+  ///   context: context,
+  ///   widget: BBottomSheetMenuList(
+  ///     list: [
+  ///       MenuListItem(
+  ///         title: 'Item 1',
+  ///         onPressed: () {},
+  ///       ),
+  ///     ],
+  ///   ),
+  ///   backgroundColor: backgroundColor,
+  ///   radius: radius,
+  ///   barColor: barColor,
+  /// );
+  /// ```
   static show({
     BuildContext? context,
     required Widget widget,
@@ -11,7 +35,7 @@ class BBottomSheetMenu {
   }) {
     showModalBottomSheet(
       context: context ?? getCurrentContext(),
-      backgroundColor: backgroundColor ?? BilionsColors.modalBackground,
+      backgroundColor: backgroundColor ?? BColors.modalBackground,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(radius ?? 20),
@@ -26,7 +50,7 @@ class BBottomSheetMenu {
             height: 4,
             width: 50,
             decoration: BoxDecoration(
-              color: barColor ?? BilionsColors.primary,
+              color: barColor ?? BColors.primary,
               borderRadius: const BorderRadius.all(Radius.circular(3)),
             ),
           ),

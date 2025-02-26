@@ -85,7 +85,7 @@ class _BDateRangePickerState extends State<BDateRangePicker> {
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       style: TextStyle(
-        color: widget.textColor ?? BilionsColors.black,
+        color: widget.textColor ?? BColors.black,
       ),
     );
   }

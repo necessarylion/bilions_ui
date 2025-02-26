@@ -5,6 +5,15 @@ enum BButtonType {
   outline,
 }
 
+/// BButton is a widget that shows a button.
+/// It is used to show a button.
+///
+/// Example
+/// ```
+/// BButton(title: 'Button', onPressed: () {})
+/// BButton(title: 'Button', onPressed: () {}, variant: BVariant.primary)
+/// BButton(title: 'Button', onPressed: () {}, variant: BVariant.primary, type: BButtonType.outline)
+/// ```
 class BButton extends StatelessWidget {
   final double? width;
   final double? height;
@@ -99,8 +108,8 @@ class BButton extends StatelessWidget {
                 color ?? BilionsTheme.getColor(variant),
               ]
             : [
-                BilionsColors.grey,
-                BilionsColors.grey,
+                BColors.grey,
+                BColors.grey,
               ],
       ),
     );

@@ -17,7 +17,7 @@ class HorizontalLine extends StatelessWidget {
     return Container(
       width: width ?? double.infinity,
       height: thickness ?? 1,
-      color: color ?? BilionsColors.lightGrey,
+      color: color ?? BColors.lightGrey,
     );
   }
 }
@@ -34,7 +34,7 @@ class VerticalLine extends StatelessWidget {
     return Container(
       width: thickness ?? 1,
       height: height ?? 45,
-      color: color ?? BilionsColors.lightGrey,
+      color: color ?? BColors.lightGrey,
     );
   }
 }

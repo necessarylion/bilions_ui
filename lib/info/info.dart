@@ -50,7 +50,7 @@ class BInfo extends StatelessWidget {
                         child: Text(
                           title,
                           style: TextStyle(
-                            color: BilionsColors.primaryTextColor,
+                            color: BColors.primaryTextColor,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
@@ -63,7 +63,7 @@ class BInfo extends StatelessWidget {
                     message,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 10,
-                    color: BilionsColors.secondaryTextColor,
+                    color: BColors.secondaryTextColor,
                   ),
                 ],
               ),
@@ -80,7 +80,7 @@ class BInfo extends StatelessWidget {
               },
               child: Icon(
                 Icons.close,
-                color: BilionsColors.secondaryTextColor,
+                color: BColors.secondaryTextColor,
                 size: 20,
               ),
             ),

@@ -11,7 +11,7 @@ class BImagePreviewModal {
     showModalBottomSheet(
       context: context ?? getCurrentContext(),
       isScrollControlled: true,
-      backgroundColor: backgroundColor ?? BilionsColors.dark,
+      backgroundColor: backgroundColor ?? BColors.dark,
       builder: (context) {
         return FractionallySizedBox(
           heightFactor: 1,

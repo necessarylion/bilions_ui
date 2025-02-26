@@ -5,7 +5,7 @@ class BToast {
   static show({
     BuildContext? context,
     required String title,
-    BVariant? variant,
+    BVariant variant = BVariant.success,
     Duration? duration,
     double marginTop = 10,
     double marginLeft = 10,
