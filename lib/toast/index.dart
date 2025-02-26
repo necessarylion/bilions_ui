@@ -7,9 +7,13 @@ class BToast {
     required String title,
     BVariant? variant,
     Duration? duration,
-    double top = 160,
+    double marginTop = 10,
+    double marginLeft = 10,
+    double marginRight = 10,
+    double radius = 10,
   }) {
     BuildContext ctx = context ?? getCurrentContext();
+    double topPosition = kIsWeb ? marginTop : marginTop + 100;
     final scaffold = ScaffoldMessenger.of(ctx);
     scaffold.showSnackBar(
       SnackBar(
@@ -22,17 +26,15 @@ class BToast {
           const MarginRight(1),
           Expanded(child: Text(title)),
         ]),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(radius)),
         ),
         padding:
             const EdgeInsets.only(top: 10, left: 15, right: 10, bottom: 10),
         margin: EdgeInsets.only(
-          bottom: MediaQuery.of(ctx).size.height - top,
-          right: 10,
-          left: 10,
+          bottom: MediaQuery.of(ctx).size.height - (topPosition + 50),
+          right: marginRight,
+          left: marginLeft,
         ),
         action: SnackBarAction(
           label: 'Dismiss',
