@@ -21,7 +21,7 @@ class BButton extends StatelessWidget {
   final String? title;
   final Function()? onPressed;
   final BVariant variant;
-  final double radius;
+  final double borderRadius;
   final Color? color;
   final Widget? icon;
   final List<Widget>? children;
@@ -37,18 +37,19 @@ class BButton extends StatelessWidget {
     this.children,
     this.icon,
     this.variant = BVariant.primary,
-    this.radius = 10,
+    this.borderRadius = 10,
     this.type = BButtonType.flat,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width ?? double.infinity,
       decoration: decoration(),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(radius),
+          borderRadius: BorderRadius.circular(borderRadius),
           onTap: onPressed != null && !disable ? onPressed : null,
           child: SizedBox(
             width: width ?? double.infinity,
@@ -98,7 +99,7 @@ class BButton extends StatelessWidget {
     }
     // flat
     return BoxDecoration(
-      borderRadius: BorderRadius.circular(radius),
+      borderRadius: BorderRadius.circular(borderRadius),
       gradient: LinearGradient(
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,

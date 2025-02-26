@@ -5,18 +5,18 @@ class BAlert extends StatelessWidget {
   final String message;
   final BVariant? variant;
   final Function? onClosed;
-  final bool showClosedIndicator;
   final Color? backgroundColor;
   final Widget? icon;
-  const BAlert(
-    this.title,
-    this.message, {
+  final double? borderWidth;
+  const BAlert({
     Key? key,
+    required this.title,
+    required this.message,
     this.variant = BVariant.warning,
     this.onClosed,
     this.icon,
     this.backgroundColor,
-    this.showClosedIndicator = false,
+    this.borderWidth = 1,
   }) : super(key: key);
 
   @override
@@ -28,10 +28,12 @@ class BAlert extends StatelessWidget {
               const EdgeInsets.only(left: 15, top: 10, right: 10, bottom: 10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              width: 1,
-              color: BColors.lightGrey,
-            ),
+            border: borderWidth == 0
+                ? null
+                : Border.all(
+                    width: 1,
+                    color: BColors.lightGrey,
+                  ),
             color: backgroundColor ?? BColors.modalBackground,
           ),
           child: Column(
@@ -79,7 +81,7 @@ class BAlert extends StatelessWidget {
             ),
           ),
         ),
-        if (showClosedIndicator)
+        if (onClosed != null)
           Positioned(
             right: 15,
             top: 10,

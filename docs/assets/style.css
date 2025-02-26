@@ -9,6 +9,14 @@ code {
   font-size: 13px !important;
 }
 
+.md-typeset table:not([class]) td:first-child code {
+  color: #6792e0;
+}
+
+.md-typeset table:not([class]) td:last-child code {
+  color: #c38714;
+}
+
 .md-typeset table:not([class]) code {
   font-size: .65rem;
 }
@@ -60,4 +68,8 @@ body[data-md-color-scheme="default"] p code {
 body[data-md-color-scheme="slate"] p code {
   font-weight: bold !important;
   color: #176bad !important;
+}
+
+.highlight .p {
+  color: #d971d6;
 }
