@@ -10,7 +10,7 @@ class BToast {
     double marginTop = 10,
     double marginLeft = 10,
     double marginRight = 10,
-    double radius = 10,
+    double borderRadius = 10,
   }) {
     BuildContext ctx = context ?? getCurrentContext();
     double topPosition = kIsWeb ? marginTop : marginTop + 100;
@@ -27,7 +27,7 @@ class BToast {
           Expanded(child: Text(title)),
         ]),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(radius)),
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
         padding:
             const EdgeInsets.only(top: 10, left: 15, right: 10, bottom: 10),

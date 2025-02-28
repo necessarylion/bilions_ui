@@ -32,7 +32,6 @@ part 'inputs/text_input.dart';
 part 'list_view/index.dart';
 part 'loading/index.dart';
 part 'modals/confirm/confirm_dialog.dart';
-part 'modals/confirm/index.dart';
 part 'modals/index.dart';
 part 'table/bilions_table.dart';
 part 'text.dart';

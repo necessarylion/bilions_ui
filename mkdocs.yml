@@ -60,10 +60,10 @@ nav:
     - components/card.md
     - components/text_input.md
     - components/password_input.md
-    - components/confirm.md
-    - components/image_preview.md
-    - components/toast.md
     - components/date_picker.md
+    - components/dialog.md
+    - components/toast.md
+    - components/image_preview.md
     - components/bottom_sheet_menu.md
   - Utilities:
     - utilities/date_time.md

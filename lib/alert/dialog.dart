@@ -118,9 +118,9 @@ class BAlertDialog extends StatelessWidget {
     bool? showClose = true,
     Color? backgroundColor,
   }) {
-    BModal(
-      context ?? getCurrentContext(),
-      BAlertDialog(
+    BModal.show(
+      context: context,
+      widget: BAlertDialog(
         title: title,
         message: message,
         variant: variant,

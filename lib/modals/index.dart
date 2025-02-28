@@ -1,23 +1,19 @@
 part of bilions_ui;
 
 class BModal {
-  final BuildContext context;
-  final Widget widget;
-  final Color? backgroundColor;
-  final double? radius;
-  final EdgeInsets? padding;
-
-  BModal(
-    this.context,
-    this.widget, {
-    this.backgroundColor,
-    this.radius,
-    this.padding,
+  static show({
+    BuildContext? context,
+    Widget? widget,
+    Color? backgroundColor,
+    double? radius,
+    EdgeInsets? padding,
+    bool barrierDismissible = true,
   }) {
-    double width = MediaQuery.of(context).size.width - 35;
+    BuildContext ctx = context ?? getCurrentContext();
+    double width = MediaQuery.of(ctx).size.width - 35;
     showDialog(
-      context: context,
-      barrierDismissible: true,
+      context: ctx,
+      barrierDismissible: barrierDismissible,
       builder: (context) => Dialog(
         backgroundColor: backgroundColor ?? BColors.modalBackground,
         shape: RoundedRectangleBorder(
