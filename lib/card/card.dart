@@ -7,7 +7,7 @@ class BCard extends StatelessWidget {
   final String? title;
   final bool showLine;
   final Color? backgroundColor;
-  final double radius;
+  final double borderRadius;
   final Function()? onPressed;
 
   const BCard({
@@ -18,7 +18,7 @@ class BCard extends StatelessWidget {
     this.footer,
     this.showLine = true,
     this.backgroundColor,
-    this.radius = 5,
+    this.borderRadius = 5,
     this.onPressed,
   }) : super(key: key);
 
@@ -27,7 +27,7 @@ class BCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(radius),
+        borderRadius: BorderRadius.circular(borderRadius),
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
@@ -41,7 +41,7 @@ class BCard extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           hoverColor: Colors.white,
-          borderRadius: BorderRadius.circular(radius),
+          borderRadius: BorderRadius.circular(borderRadius),
           onTap: onPressed,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

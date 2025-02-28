@@ -1,14 +1,15 @@
 part of bilions_ui;
 
-class BInfo extends StatelessWidget {
+class BAlertDialog extends StatelessWidget {
   final String title;
   final String message;
   final BVariant? variant;
   final bool? showClose;
   final double borderThickness;
   final double borderRadius;
+  final Color? backgroundColor;
 
-  const BInfo({
+  const BAlertDialog({
     required this.title,
     required this.message,
     Key? key,
@@ -16,6 +17,7 @@ class BInfo extends StatelessWidget {
     this.showClose = false,
     this.borderThickness = 0,
     this.borderRadius = 10,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -96,14 +98,39 @@ class BInfo extends StatelessWidget {
           ? null
           : Border.all(
               color: BilionsTheme.getColor(variant), width: borderThickness),
-      gradient: const LinearGradient(
+      gradient: LinearGradient(
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
         colors: [
-          Colors.transparent,
-          Colors.transparent,
+          backgroundColor ?? Colors.transparent,
+          backgroundColor ?? Colors.transparent,
         ],
       ),
     );
+  }
+
+  /// Show a modal alert dialog
+  static show({
+    BuildContext? context,
+    required String title,
+    required String message,
+    BVariant? variant,
+    bool? showClose = true,
+    Color? backgroundColor,
+  }) {
+    BModal(
+      context ?? getCurrentContext(),
+      BAlertDialog(
+        title: title,
+        message: message,
+        variant: variant,
+        showClose: showClose,
+        backgroundColor: backgroundColor,
+      ),
+    );
+  }
+
+  static hide({BuildContext? context}) {
+    Navigator.pop(context ?? getCurrentContext());
   }
 }

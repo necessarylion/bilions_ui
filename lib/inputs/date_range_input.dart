@@ -10,6 +10,8 @@ class BDateRangePicker extends StatefulWidget {
   final String? initialStartDate;
   final String? initialEndDate;
   final Function(String, String) onChanged;
+  final double borderRadius;
+
   const BDateRangePicker({
     Key? key,
     required this.label,
@@ -21,6 +23,7 @@ class BDateRangePicker extends StatefulWidget {
     this.initialStartDate,
     required this.onChanged,
     this.suffixIcon,
+    this.borderRadius = 5,
   }) : super(key: key);
 
   @override
@@ -63,9 +66,17 @@ class _BDateRangePickerState extends State<BDateRangePicker> {
       enableSuggestions: false,
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
         ),
         enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(
             color: BilionsTheme.getColor(widget.variant),
           ),

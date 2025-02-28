@@ -11,9 +11,11 @@ class BTextInput extends StatefulWidget {
   final Color? textColor;
   final Color? labelColor;
   final String? placeholder;
+  final Color? placeholderColor;
   final Function()? onTab;
   final int? maxLines;
   final bool readOnly;
+  final double borderRadius;
   const BTextInput({
     Key? key,
     required this.label,
@@ -27,8 +29,10 @@ class BTextInput extends StatefulWidget {
     this.textColor,
     this.variant = BVariant.primary,
     this.labelColor,
+    this.placeholderColor,
     this.onTab,
     this.readOnly = false,
+    this.borderRadius = 5,
   }) : super(key: key);
 
   @override
@@ -52,9 +56,17 @@ class _BTextInputState extends State<BTextInput> {
       ),
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
         ),
         enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(
             color: BilionsTheme.getColor(widget.variant),
           ),
@@ -64,7 +76,7 @@ class _BTextInputState extends State<BTextInput> {
         filled: true,
         hintText: widget.placeholder,
         hintStyle: TextStyle(
-          color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
+          color: widget.placeholderColor ?? BColors.secondary,
         ),
         fillColor: BilionsTheme.getLightColor(widget.variant),
         labelText: widget.label,

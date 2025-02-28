@@ -57,10 +57,12 @@ nav:
   - Components:
     - components/button.md
     - components/alert.md
+    - components/card.md
+    - components/text_input.md
+    - components/password_input.md
     - components/confirm.md
     - components/image_preview.md
     - components/toast.md
-    - components/text_input.md
     - components/date_picker.md
     - components/bottom_sheet_menu.md
   - Utilities:

@@ -10,17 +10,24 @@ class BPasswordInput extends StatefulWidget {
   final BVariant? variant;
   final Color? labelColor;
   final Color? textColor;
+  final String? placeholder;
+  final Color? placeholderColor;
+  final double borderRadius;
+
   const BPasswordInput({
     Key? key,
     required this.label,
     this.prefixIcon,
     this.suffixIcon,
+    this.placeholder,
     this.controller,
     this.initialValue,
     this.onChanged,
     this.textColor,
     this.variant = BVariant.primary,
     this.labelColor,
+    this.placeholderColor,
+    this.borderRadius = 5,
   }) : super(key: key);
 
   @override
@@ -40,10 +47,22 @@ class _BPasswordInputState extends State<BPasswordInput> {
       enableSuggestions: false,
       obscureText: secure,
       decoration: InputDecoration(
+        hintText: widget.placeholder,
+        hintStyle: TextStyle(
+          color: widget.placeholderColor ?? BColors.secondary,
+        ),
         focusedBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
         ),
         enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(
             color: BilionsTheme.getColor(widget.variant),
           ),

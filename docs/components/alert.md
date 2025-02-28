@@ -40,7 +40,7 @@ BAlertDialog.show(
 ```
 
 !!! info "Dialog"
-    Dialog will be show as a modal and can be closed by clicking the close icon or pressing the back button.
+    `BAlertDialog.show` is a function and will be show as a modal and can be closed by clicking the close icon or pressing the back button.
 
 ## Properties
 
