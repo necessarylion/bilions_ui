@@ -1,6 +1,6 @@
 # Password Input
 
-![Card](../assets/password_input.png){width=400px}
+![Card](../assets/password_input.png){width=400px style="border-radius: 10px;""}
 
 ## Import
 

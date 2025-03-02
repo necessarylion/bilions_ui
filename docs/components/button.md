@@ -1,6 +1,6 @@
 # Button
 
-![Button](../assets/button.png){width=300px}
+![Button](../assets/button.png){width=300px style="border-radius: 10px;"}
 
 ## Import
 

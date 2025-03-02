@@ -1,6 +1,6 @@
 # Text Input
 
-![Card](../assets/text_input.png){width=400px}
+![Card](../assets/text_input.png){width=400px style="border-radius: 10px;"}
 
 ## Import
 
@@ -34,7 +34,7 @@ BTextInput(
 
 ## Textarea Input
 
-![Card](../assets/textarea.png){width=400px}
+![Card](../assets/textarea.png){width=400px style="border-radius: 10px;"}
 
 ```dart
 String description = '';
