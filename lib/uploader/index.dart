@@ -11,10 +11,10 @@ class BUploader {
   }) {
     BBottomSheetMenu.show(
       context: context,
-      widget: BBottomSheetMenuList(
+      widget: BMenuList(
         list: [
-          MenuListItem(
-            Icon(
+          BMenuListItem(
+            icon: Icon(
               Icons.photo_library_rounded,
               color: BilionsTheme.getColor(variant ?? BVariant.primary),
             ),
@@ -26,8 +26,8 @@ class BUploader {
               onPicked(file);
             },
           ),
-          MenuListItem(
-            Icon(
+          BMenuListItem(
+            icon: Icon(
               Icons.camera,
               color: BilionsTheme.getColor(variant ?? BVariant.primary),
             ),

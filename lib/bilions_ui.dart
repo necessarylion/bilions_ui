@@ -21,7 +21,6 @@ part 'buttons/button.dart';
 part 'card/card.dart';
 part 'general.dart';
 part 'image/avatar.dart';
-part 'image/image_preview_modal.dart';
 part 'image/index.dart';
 part 'image/preview.dart';
 part 'image/slider.dart';

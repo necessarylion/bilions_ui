@@ -12,11 +12,11 @@ part of bilions_ui;
 ///   ],
 /// );
 /// ```
-class BBottomSheetMenuList extends StatelessWidget {
-  final List<MenuListItem> list;
+class BMenuList extends StatelessWidget {
+  final List<BMenuListItem> list;
   final Color? lineColor;
   final double? lineThickness;
-  const BBottomSheetMenuList({
+  const BMenuList({
     required this.list,
     Key? key,
     this.lineColor,
@@ -27,12 +27,12 @@ class BBottomSheetMenuList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ...list.map((MenuListItem list) => _list(list)).toList(),
+        ...list.map((BMenuListItem list) => _list(list)).toList(),
       ],
     );
   }
 
-  _list(MenuListItem list) {
+  _list(BMenuListItem list) {
     return InkWell(
       onTap: list.onPressed,
       child: Column(
@@ -76,15 +76,15 @@ class BBottomSheetMenuList extends StatelessWidget {
   }
 }
 
-class MenuListItem {
+class BMenuListItem {
   final String title;
   final String? subTitle;
   final Widget icon;
   final Widget? subFixIcon;
   final Function()? onPressed;
 
-  const MenuListItem(
-    this.icon, {
+  const BMenuListItem({
+    required this.icon,
     this.subTitle,
     this.onPressed,
     this.subFixIcon,

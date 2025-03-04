@@ -3,7 +3,14 @@ part of bilions_ui;
 class BImageSlider extends StatelessWidget {
   final List images;
   final double? ratio;
-  const BImageSlider(this.images, {Key? key, this.ratio}) : super(key: key);
+  final int? activeImageIndex;
+
+  const BImageSlider(
+    this.images, {
+    Key? key,
+    this.ratio,
+    this.activeImageIndex,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +19,7 @@ class BImageSlider extends StatelessWidget {
         aspectRatio: ratio ?? 1.7,
         enlargeCenterPage: true,
         enableInfiniteScroll: false,
-        initialPage: 2,
+        initialPage: activeImageIndex ?? ((images.length / 2).round() - 1),
         autoPlay: false,
       ),
       items: [
@@ -20,10 +27,10 @@ class BImageSlider extends StatelessWidget {
             .mapIndexed(
               (e, index) => InkWell(
                 onTap: () {
-                  BImagePreviewModal.show(
+                  BImagePreview.show(
                     context: context,
                     images: images,
-                    index: index,
+                    activeImageIndex: index,
                   );
                 },
                 child: BImage(
