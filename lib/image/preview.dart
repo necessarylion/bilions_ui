@@ -71,6 +71,7 @@ class BImagePreview extends StatelessWidget {
                 BButton(
                   width: 40,
                   height: 40,
+                  color: backgroundColor ?? BColors.dark,
                   icon: Icon(
                     Icons.close,
                     color: BColors.white,
