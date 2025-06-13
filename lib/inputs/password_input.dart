@@ -1,33 +1,40 @@
 part of bilions_ui;
 
-class BilionsPasswordInput extends StatefulWidget {
+class BPasswordInput extends StatefulWidget {
   final String label;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final String? initialValue;
   final Function(String)? onChanged;
-  final String? variant;
+  final BVariant? variant;
   final Color? labelColor;
   final Color? textColor;
-  const BilionsPasswordInput({
+  final String? placeholder;
+  final Color? placeholderColor;
+  final double borderRadius;
+
+  const BPasswordInput({
     Key? key,
     required this.label,
     this.prefixIcon,
     this.suffixIcon,
+    this.placeholder,
     this.controller,
     this.initialValue,
     this.onChanged,
     this.textColor,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.labelColor,
+    this.placeholderColor,
+    this.borderRadius = 5,
   }) : super(key: key);
 
   @override
-  State<BilionsPasswordInput> createState() => _BilionsPasswordInputState();
+  State<BPasswordInput> createState() => _BPasswordInputState();
 }
 
-class _BilionsPasswordInputState extends State<BilionsPasswordInput> {
+class _BPasswordInputState extends State<BPasswordInput> {
   TextEditingController? _controller;
 
   bool secure = true;
@@ -40,10 +47,22 @@ class _BilionsPasswordInputState extends State<BilionsPasswordInput> {
       enableSuggestions: false,
       obscureText: secure,
       decoration: InputDecoration(
+        hintText: widget.placeholder,
+        hintStyle: TextStyle(
+          color: widget.placeholderColor ?? BColors.secondary,
+        ),
         focusedBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
         ),
         enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(
             color: BilionsTheme.getColor(widget.variant),
           ),
@@ -70,7 +89,7 @@ class _BilionsPasswordInputState extends State<BilionsPasswordInput> {
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       style: TextStyle(
-        color: widget.textColor ?? BilionsColors.black,
+        color: widget.textColor ?? BColors.black,
       ),
     );
   }

@@ -1,11 +1,23 @@
 part of bilions_ui;
 
-class MenuList extends StatelessWidget {
-  final List<MenuListItem> list;
+/// BBottomSheetMenuList is a widget that shows a list of items in a bottom sheet menu.
+/// It is used to show a list of items in a bottom sheet menu.
+///
+/// Example
+/// ```
+/// BBottomSheetMenuList(
+///   list: [
+///     MenuListItem(title: 'Item 1', onPressed: () {}),
+///     MenuListItem(title: 'Item 2', onPressed: () {}),
+///   ],
+/// );
+/// ```
+class BMenuList extends StatelessWidget {
+  final List<BMenuListItem> list;
   final Color? lineColor;
   final double? lineThickness;
-  const MenuList(
-    this.list, {
+  const BMenuList({
+    required this.list,
     Key? key,
     this.lineColor,
     this.lineThickness,
@@ -15,12 +27,12 @@ class MenuList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ...list.map((MenuListItem list) => _list(list)).toList(),
+        ...list.map((BMenuListItem list) => _list(list)).toList(),
       ],
     );
   }
 
-  _list(MenuListItem list) {
+  _list(BMenuListItem list) {
     return InkWell(
       onTap: list.onPressed,
       child: Column(
@@ -32,12 +44,12 @@ class MenuList extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: BilionsColors.primaryLight,
+                    color: BColors.primaryLight,
                     borderRadius: const BorderRadius.all(Radius.circular(300)),
                   ),
                   child: list.icon,
                 ),
-                mr(1),
+                const MarginRight(1),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,33 +58,33 @@ class MenuList extends StatelessWidget {
                       if (list.subTitle != null)
                         Span(
                           list.subTitle,
-                          color: BilionsColors.grey,
+                          color: BColors.grey,
                           size: 13,
                         )
                     ],
                   ),
                 ),
                 list.subFixIcon ??
-                    Icon(Icons.chevron_right, color: BilionsColors.primary)
+                    Icon(Icons.chevron_right, color: BColors.primary)
               ],
             ),
           ),
-          horizontalLine(color: lineColor, thickness: lineThickness),
+          HorizontalLine(color: lineColor, thickness: lineThickness),
         ],
       ),
     );
   }
 }
 
-class MenuListItem {
+class BMenuListItem {
   final String title;
   final String? subTitle;
   final Widget icon;
   final Widget? subFixIcon;
   final Function()? onPressed;
 
-  const MenuListItem(
-    this.icon, {
+  const BMenuListItem({
+    required this.icon,
     this.subTitle,
     this.onPressed,
     this.subFixIcon,

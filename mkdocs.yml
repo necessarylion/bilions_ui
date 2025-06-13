@@ -1,0 +1,77 @@
+site_name: "Bilions UI"
+repo_url: https://github.com/necessarylion/bilions_ui
+site_url: https://necessarylion.github.io/bilions_ui
+copyright: Copyright &copy; 2023 - 2025
+extra_css:
+  - assets/style.css
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      name: Github
+      link: https://github.com/necessarylion/bilions_ui
+
+theme:
+  features:
+    - navigation.instant
+    - navigation.tracking
+    # - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.expand
+  font:
+    text: Rubik
+    code: Space Mono
+  favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  name: material
+  palette:
+   # Palette toggle for dark mode
+  - scheme: default
+    primary: custom
+    toggle:
+      icon: material/brightness-4
+      name: Switch to dark mode
+  
+  # Palette toggle for light mode
+  - scheme: slate
+    primary: custom
+    toggle:
+      icon: material/brightness-7 
+      name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Getting Started: 
+    - index.md
+    - installation.md
+  - Components:
+    - components/alert.md
+    - components/button.md
+    - components/bottom_sheet_menu.md
+    - components/card.md
+    - components/dialog.md
+    - components/date_picker.md
+    - components/image.md
+    - components/image_slider.md
+    - components/image_preview.md
+    - components/list_view.md
+    - components/loader.md
+    - components/password_input.md
+    - components/text_input.md
+    - components/toast.md
+    - components/table.md
+    - components/uploader.md
+  - Utilities:
+    - utilities/date_time.md
+  - Customization:
+    - customization/theme.md

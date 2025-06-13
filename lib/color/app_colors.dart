@@ -1,7 +1,9 @@
 import 'package:bilions_ui/bilions_ui.dart';
 import 'package:flutter/material.dart';
 
-class BilionsColors {
+/// BColors is a class that provides a global configuration for the Bilions UI colors.
+/// It is used to get the colors from the UI.
+class BColors {
   static get background => BilionsUI().background;
   static get black => BilionsUI().black;
   static get danger => BilionsUI().danger;
@@ -30,7 +32,7 @@ class BilionsColors {
   static get white => BilionsUI().white;
 }
 
-class ColorConfig {
+class BColorConfig {
   Color? danger;
   Color? dangerLight;
   Color? info;
@@ -53,7 +55,7 @@ class ColorConfig {
   Color? secondary;
   Color? lightGrey;
 
-  ColorConfig({
+  BColorConfig({
     this.danger,
     this.dangerLight,
     this.info,

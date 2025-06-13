@@ -1,6 +1,6 @@
 part of bilions_ui;
 
-class ImageWidget extends StatelessWidget {
+class BImage extends StatelessWidget {
   final String image;
   final double? width;
   final double? height;
@@ -9,7 +9,7 @@ class ImageWidget extends StatelessWidget {
   final double borderWidth;
   final Color? borderColor;
   final AlignmentGeometry alignment;
-  const ImageWidget(
+  const BImage(
     this.image, {
     Key? key,
     this.width,
@@ -25,7 +25,7 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: borderColor ?? BilionsColors.white,
+        color: borderColor ?? BColors.white,
         borderRadius: BorderRadius.all(Radius.circular(radius)),
       ),
       padding: EdgeInsets.all(borderWidth),

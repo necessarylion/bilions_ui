@@ -1,20 +1,20 @@
 part of bilions_ui;
 
-class BilionsListView extends StatefulWidget {
+class BListView extends StatefulWidget {
   final List<Widget> children;
   final Function? onScrollEnded;
   final Axis? scrollDirection;
-  const BilionsListView(
+  const BListView(
       {super.key,
       required this.children,
       this.onScrollEnded,
       this.scrollDirection});
 
   @override
-  State<BilionsListView> createState() => _BilionsListViewState();
+  State<BListView> createState() => _BilionsListViewState();
 }
 
-class _BilionsListViewState extends State<BilionsListView> {
+class _BilionsListViewState extends State<BListView> {
   ScrollController scrollController = ScrollController();
 
   @override

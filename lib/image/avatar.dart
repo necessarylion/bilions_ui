@@ -1,12 +1,12 @@
 part of bilions_ui;
 
-class Avatar extends StatelessWidget {
+class BAvatar extends StatelessWidget {
   final String src;
   final String? title;
   final String? subTitle;
   final double? size;
   final Color? backgroundColor;
-  const Avatar(
+  const BAvatar(
     this.src, {
     Key? key,
     this.title,
@@ -19,14 +19,14 @@ class Avatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        ImageWidget(
+        BImage(
           src,
           height: size,
           borderColor: backgroundColor ?? Colors.transparent,
           width: size,
           radius: 300,
         ),
-        if (title != null) mr(1),
+        if (title != null) const MarginRight(1),
         if (title != null)
           Expanded(
               child: Column(
@@ -35,7 +35,7 @@ class Avatar extends StatelessWidget {
               H(title),
               Span(
                 subTitle,
-                color: BilionsColors.grey,
+                color: BColors.grey,
               ),
             ],
           ))

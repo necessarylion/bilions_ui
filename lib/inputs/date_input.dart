@@ -1,103 +1,91 @@
 part of bilions_ui;
 
-class BilionsDatePicker extends StatefulWidget {
+class BDatePicker extends StatefulWidget {
   final String label;
-  final String variant;
+  final BVariant variant;
   final Widget? suffixIcon;
   final Color? labelColor;
   final Color? textColor;
+  final Color? placeholderColor;
   final Function(String) onChanged;
   final Widget? prefixIcon;
   final String? initialValue;
-  const BilionsDatePicker({
+  final double borderRadius;
+  final String? placeholder;
+
+  const BDatePicker({
     Key? key,
     required this.label,
     required this.onChanged,
     this.textColor,
+    this.placeholderColor,
     this.prefixIcon,
+    this.placeholder,
     this.initialValue,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.labelColor,
     this.suffixIcon,
+    this.borderRadius = 5,
   }) : super(key: key);
 
   @override
-  State<BilionsDatePicker> createState() => _BilionsDatePickerState();
+  State<BDatePicker> createState() => _BDatePickerState();
 }
 
-class _BilionsDatePickerState extends State<BilionsDatePicker> {
-  final TextEditingController txt = TextEditingController();
+class _BDatePickerState extends State<BDatePicker> {
+  final TextEditingController controller = TextEditingController();
 
   String? date;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: txt,
-      onTap: () {
-        openCalendar(
-          context,
+    return BTextInput(
+      label: widget.label,
+      initialValue: controller.text,
+      controller: controller,
+      textColor: widget.textColor,
+      prefixIcon: widget.prefixIcon ??
+          Icon(
+            Icons.calendar_month,
+            color: BilionsTheme.getColor(widget.variant),
+          ),
+      suffixIcon: widget.suffixIcon,
+      placeholder: widget.placeholder,
+      placeholderColor: widget.placeholderColor,
+      borderRadius: widget.borderRadius,
+      variant: widget.variant,
+      readOnly: true,
+      onTab: () {
+        BCalendar.openDatePicker(
+          context: context,
           initialDate: date,
           onDateChanged: (result) {
-            txt.text = dateToString(result);
+            controller.text = dateToString(result);
             String formattedDateString =
                 dateToString(result, format: 'yyyy-MM-dd HH:mm:ss');
-            setState(() {
-              date = formattedDateString;
-            });
+            setState(() => date = formattedDateString);
             widget.onChanged(formattedDateString);
           },
           variant: widget.variant,
         );
       },
-      readOnly: true,
-      autocorrect: false,
-      enableSuggestions: false,
-      decoration: InputDecoration(
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
-        ),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: BilionsTheme.getColor(widget.variant),
-          ),
-        ),
-        prefixIcon: widget.prefixIcon ??
-            Icon(
-              Icons.calendar_month,
-              color: widget.textColor ?? BilionsTheme.getColor(widget.variant),
-            ),
-        suffixIcon: widget.suffixIcon,
-        filled: true,
-        fillColor: BilionsTheme.getLightColor(widget.variant),
-        labelText: widget.label,
-        labelStyle: TextStyle(
-          color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
-        ),
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-      ),
-      style: TextStyle(
-        color: widget.textColor ?? BilionsColors.black,
-      ),
     );
   }
 
   @override
   void dispose() {
-    txt.dispose();
+    controller.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
-    if (widget.initialValue != null) {
+    if (widget.initialValue != null && widget.initialValue!.isNotEmpty) {
       DateTime initialDate = moment(widget.initialValue!).parse();
-      txt.text = dateToString(initialDate);
+      controller.text = dateToString(initialDate);
       String formattedDateString =
           dateToString(initialDate, format: 'yyyy-MM-dd HH:mm:ss');
-      setState(() {
-        date = formattedDateString;
-      });
+      setState(() => date = formattedDateString);
     }
     super.initState();
   }

@@ -1,36 +1,36 @@
 part of bilions_ui;
 
 class BilionsTheme {
-  static Color getColor(String? variant) {
-    if (variant == 'success') {
-      return BilionsColors.success;
+  static Color getColor(BVariant? variant) {
+    if (variant == BVariant.success) {
+      return BColors.success;
     }
-    if (variant == 'danger') {
-      return BilionsColors.danger;
+    if (variant == BVariant.danger) {
+      return BColors.danger;
     }
-    if (variant == 'warning') {
-      return BilionsColors.warning;
+    if (variant == BVariant.warning) {
+      return BColors.warning;
     }
-    if (variant == 'info') {
-      return BilionsColors.info;
+    if (variant == BVariant.info) {
+      return BColors.info;
     }
-    return BilionsColors.primary;
+    return BColors.primary;
   }
 
-  static Widget getIcon(String? variant) {
-    if (variant == 'success') {
+  static Widget getIcon(BVariant? variant) {
+    if (variant == BVariant.success) {
       return Icon(
         Icons.check_circle,
         color: getColor(variant),
       );
     }
-    if (variant == 'danger') {
+    if (variant == BVariant.danger) {
       return Icon(
         Icons.error_rounded,
         color: getColor(variant),
       );
     }
-    if (variant == 'warning') {
+    if (variant == BVariant.warning) {
       return Icon(
         Icons.info,
         color: getColor(variant),
@@ -42,19 +42,19 @@ class BilionsTheme {
     );
   }
 
-  static Color getLightColor(String? variant) {
-    if (variant == 'success') {
-      return BilionsColors.successLight;
+  static Color getLightColor(BVariant? variant) {
+    if (variant == BVariant.success) {
+      return BColors.successLight;
     }
-    if (variant == 'danger') {
-      return BilionsColors.dangerLight;
+    if (variant == BVariant.danger) {
+      return BColors.dangerLight;
     }
-    if (variant == 'warning') {
-      return BilionsColors.warningLight;
+    if (variant == BVariant.warning) {
+      return BColors.warningLight;
     }
-    if (variant == 'info') {
-      return BilionsColors.infoLight;
+    if (variant == BVariant.info) {
+      return BColors.infoLight;
     }
-    return BilionsColors.primaryLight;
+    return BColors.primaryLight;
   }
 }

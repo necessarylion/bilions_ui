@@ -1,20 +1,22 @@
 part of bilions_ui;
 
-class BilionsTextInput extends StatefulWidget {
+class BTextInput extends StatefulWidget {
   final String label;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final String? initialValue;
   final Function(String)? onChanged;
-  final String? variant;
+  final BVariant? variant;
   final Color? textColor;
   final Color? labelColor;
   final String? placeholder;
+  final Color? placeholderColor;
   final Function()? onTab;
   final int? maxLines;
   final bool readOnly;
-  const BilionsTextInput({
+  final double borderRadius;
+  const BTextInput({
     Key? key,
     required this.label,
     this.prefixIcon,
@@ -25,17 +27,19 @@ class BilionsTextInput extends StatefulWidget {
     this.placeholder,
     this.maxLines,
     this.textColor,
-    this.variant = 'primary',
+    this.variant = BVariant.primary,
     this.labelColor,
+    this.placeholderColor,
     this.onTab,
     this.readOnly = false,
+    this.borderRadius = 5,
   }) : super(key: key);
 
   @override
-  State<BilionsTextInput> createState() => _BilionsTextInputState();
+  State<BTextInput> createState() => _BTextInputState();
 }
 
-class _BilionsTextInputState extends State<BilionsTextInput> {
+class _BTextInputState extends State<BTextInput> {
   TextEditingController? _controller;
 
   @override
@@ -48,13 +52,21 @@ class _BilionsTextInputState extends State<BilionsTextInput> {
       maxLines: widget.maxLines,
       enableSuggestions: false,
       style: TextStyle(
-        color: widget.textColor ?? BilionsColors.black,
+        color: widget.textColor ?? BColors.black,
       ),
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(color: BilionsTheme.getColor(widget.variant)),
         ),
         enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(widget.borderRadius),
+            topRight: Radius.circular(widget.borderRadius),
+          ),
           borderSide: BorderSide(
             color: BilionsTheme.getColor(widget.variant),
           ),
@@ -64,7 +76,7 @@ class _BilionsTextInputState extends State<BilionsTextInput> {
         filled: true,
         hintText: widget.placeholder,
         hintStyle: TextStyle(
-          color: widget.labelColor ?? BilionsTheme.getColor(widget.variant),
+          color: widget.placeholderColor ?? BColors.secondary,
         ),
         fillColor: BilionsTheme.getLightColor(widget.variant),
         labelText: widget.label,
