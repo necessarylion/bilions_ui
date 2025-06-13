@@ -1,7 +1,11 @@
 part of bilions_ui;
 
 class BLoader {
-  static show({BuildContext? context, Color? color}) {
+  static show({
+    BuildContext? context,
+    Color? circleColor,
+    Widget? child,
+  }) {
     BuildContext ctx = context ?? getCurrentContext();
     showDialog(
       context: ctx,
@@ -9,9 +13,10 @@ class BLoader {
       builder: (context) => Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
-          child: CircularProgressIndicator(
-            color: color ?? BColors.primary,
-          ),
+          child: child ??
+              CircularProgressIndicator(
+                color: circleColor ?? BColors.primary,
+              ),
         ),
       ),
     );

@@ -55,16 +55,22 @@ nav:
     - index.md
     - installation.md
   - Components:
-    - components/button.md
     - components/alert.md
-    - components/card.md
-    - components/text_input.md
-    - components/password_input.md
-    - components/date_picker.md
-    - components/dialog.md
-    - components/toast.md
-    - components/image_preview.md
+    - components/button.md
     - components/bottom_sheet_menu.md
+    - components/card.md
+    - components/dialog.md
+    - components/date_picker.md
+    - components/image.md
+    - components/image_slider.md
+    - components/image_preview.md
+    - components/list_view.md
+    - components/loader.md
+    - components/password_input.md
+    - components/text_input.md
+    - components/toast.md
+    - components/table.md
+    - components/uploader.md
   - Utilities:
     - utilities/date_time.md
   - Customization:
